@@ -1,6 +1,5 @@
 #main {
-	position: relative;
-	max-width: 800px !important;
+	display: table;
 	margin: 0px auto;
 }
 
