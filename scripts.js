@@ -26,21 +26,28 @@ function display(results) {
 	else {
 		$("#list_options").hide();
 		$("#number_options").hide();
-		$("#welcome").fadeOut();
-		$("#results").html(results);
-		$("#results").fadeIn();
-		$("#options").fadeIn();
-	}
-	if(mode=="number") {
-		$("#number_options").fadeIn();
-	} else {
-		$("#number_options").fadeOut();
+		$("#welcome").fadeOut(function() {
+			$("#results").html(results);
+			$("#results").fadeIn();
+			$("#options").fadeIn();
+		});
 	}
 	if(mode=="from_list" || mode=="sort_list") {
-		$("#list_options").fadeIn();
+		$("#options-header").fadeIn();
+		$("#number_options").fadeOut(function() {
+			$("#list_options").fadeIn();
+		});
+	}
+	else if(mode=="number") {
+		$("#options-header").fadeIn();
+		$("#list_options").fadeOut(function() {
+			$("#number_options").fadeIn();
+		});
 	}
 	else {
 		$("#list_options").fadeOut();
+		$("#number_options").fadeOut();
+		$("#options-header").fadeOut();
 	}
 }
 
