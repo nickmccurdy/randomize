@@ -33,9 +33,6 @@
 	display: none;
 }
 
-#results {
-	cursor: pointer;
-}
 #results #number {
 	font-size: 36px;
 }
@@ -48,6 +45,10 @@
 #results ul {
 	list-style-type: decimal;
 	list-style-position: inside;
+}
+
+#reload-button {
+	margin: 15px 0px;
 }
 
 #options input {

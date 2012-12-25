@@ -68,10 +68,6 @@ function switchMode(mode_new) {
 	mode = mode_new;
 }
 
-$("#results").live("click", function() {
-	reload();
-});
-
 function preload() {
 	var to_preload = [];
 	var i;
@@ -116,6 +112,9 @@ $(function($) {
 	});
 	$("#sort-list-button").click(function() {
 		sort_list();
+	});
+	$("#reload-button").click(function() {
+		reload();
 	});
 	
 	// preload
