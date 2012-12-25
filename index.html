@@ -39,22 +39,26 @@
 			</a></li>
 		</ul>
 
-		<div class="well">
+		<div class="well clearfix">
 
-			<h2>Results</h2>
-			<div id="welcome">Click on a tool to start.<br><span class="muted">You can then click here to reload.</span></div>
-			<div id="results"></div>
+			<div class="split pull-left">
+				<h2>Results</h2>
+				<div id="welcome">Click on a tool to start.<br><span class="muted">You can then click here to reload.</span></div>
+				<div id="results"></div>
+			</div>
 
-			<h2>Options</h2>
-			<div id="options">
-				<!--<a href="javascript:reload()">&nbsp;reload&nbsp;</a>-->
-				<table id="number_options">
-					<tr><td id="right">From</td><td id="left"><input type="number" id="minimum" value="1"></td></tr>
-					<tr><td id="right">To</td><td id="left"><input type="number" id="maximum" value="10"></td></tr>
-				</table>
-				<span id="list_options">
-					<textarea placeholder="Enter list items here, with one item per line."></textarea><br>
-				</span>
+			<div class="split pull-right">
+				<h2>Options</h2>
+				<div id="options">
+					<!--<a href="javascript:reload()">&nbsp;reload&nbsp;</a>-->
+					<table id="number_options">
+						<tr><td id="right">From</td><td id="left"><input type="number" id="minimum" value="1"></td></tr>
+						<tr><td id="right">To</td><td id="left"><input type="number" id="maximum" value="10"></td></tr>
+					</table>
+					<span id="list_options">
+						<textarea placeholder="Enter list items here, with one item per line."></textarea><br>
+					</span>
+				</div>
 			</div>
 
 		</div>
