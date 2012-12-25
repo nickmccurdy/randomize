@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+	<!-- basic info -->
+	<title>Randomize 1.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- css -->
+	<link rel="stylesheet" href="../../components/bootstrap.css/css/bootstrap-cosmo.min.css">
+	<link rel="stylesheet" href="../../components/bootstrap.css/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<!-- icons -->
+	<link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+	<div class="container-fluid" id="main">
+
+		<h1 id="title">Randomize</h1>
+
+		<ul class="nav nav-tabs">
+			<li><a href="#" data-toggle="tab" id="dice-button">
+				<i class="icon-th-large"></i> Dice
+			</a></li>
+			<li><a href="#" data-toggle="tab" id="coins-button">
+				<i class="icon-adjust"></i> Coins
+			</a></li>
+			<li><a href="#" data-toggle="tab" id="card-button">
+				<i class="icon-book"></i> Cards
+			</a></li>
+			<li><a href="#" data-toggle="tab" id="numbers-button">
+				<i class="icon-question-sign"></i> Numbers
+			</a></li>
+			<li><a href="#" data-toggle="tab" id="from-list-button">
+				<i class="icon-hand-right"></i> From List
+			</a></li>
+			<li><a href="#" data-toggle="tab" id="sort-list-button">
+				<i class="icon-random"></i> Sort List
+			</a></li>
+		</ul>
+
+		<div class="well">
+
+			<h2>Results</h2>
+			<div id="welcome">Click on a tool to start.<br><span class="muted">You can then click here to reload.</span></div>
+			<div id="results"></div>
+
+			<h2>Options</h2>
+			<div id="options">
+				<!--<a href="javascript:reload()">&nbsp;reload&nbsp;</a>-->
+				<table id="number_options">
+					<tr><td id="right">From</td><td id="left"><input type="number" id="minimum" value="1"></td></tr>
+					<tr><td id="right">To</td><td id="left"><input type="number" id="maximum" value="10"></td></tr>
+				</table>
+				<span id="list_options">
+					<textarea placeholder="Enter list items here, with one item per line."></textarea><br>
+				</span>
+			</div>
+
+		</div>
+	</div>
+
+<!-- scripts -->
+<script src="../../components/jquery/jquery.min.js"></script>
+<script src="../../components/bootstrap.css/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
+<script src="tools.js"></script>
+
+</body>
+</html>

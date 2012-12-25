@@ -1,0 +1,46 @@
+#main {
+	position: relative;
+	max-width: 800px !important;
+	margin: 0px auto;
+}
+
+.nav-tabs {
+	margin: 0;
+}
+
+.nav-tabs .active a, .nav-tabs .active a:hover {
+	color: #000;
+	background-color: #eee;
+}
+
+#options, #results {
+	display: none;
+}
+
+#results {
+	cursor: pointer;
+}
+#results #number {
+	font-size: 36px;
+}
+#results #text {
+	font-size: 20px;
+}
+#results #list {
+	font-size: 16px;
+}
+#results ul {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+
+#options input {
+	width: 40px;
+}
+
+#number_options #right {
+	text-align: right;
+}
+#number_options #left {
+	text-align: left;
+}
