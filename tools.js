@@ -48,7 +48,7 @@ function number() { //BUGGY
 		maximum = 10;
 	}
 	var roll = Math.floor(Math.random()*maximum+minimum);
-	display("<span id='number'>"+roll+"</span><br><span id='info'>from "+minimum+" to "+maximum+" </span>");
+	display("<span id='number'>"+roll+"</span><br><span class='mute'>from "+minimum+" to "+maximum+" </span>");
 	
 }
 function from_list()
