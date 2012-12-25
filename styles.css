@@ -7,6 +7,10 @@
 	margin: 0;
 }
 
+.nav-tabs li:last-child a {
+	margin-right: 0 !important;
+}
+
 .nav-tabs .active a, .nav-tabs .active a:hover {
 	color: #000;
 	background-color: #eee;
