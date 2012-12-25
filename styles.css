@@ -29,7 +29,7 @@
 	background-color: #eee;
 }
 
-#options, #results {
+#options-header, #options, #results {
 	display: none;
 }
 
