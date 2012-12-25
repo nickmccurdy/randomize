@@ -29,7 +29,7 @@
 	background-color: #eee;
 }
 
-#options-header, #options, #results {
+#results, #reload-button, #options-header, #options {
 	display: none;
 }
 

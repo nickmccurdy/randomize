@@ -29,6 +29,7 @@ function display(results) {
 		$("#welcome").fadeOut(function() {
 			$("#results").html(results);
 			$("#results").fadeIn();
+			$("#reload-button").fadeIn();
 			$("#options").fadeIn();
 		});
 	}
