@@ -3,12 +3,21 @@
 	margin: 0px auto;
 }
 
+#title {
+	text-align: center;
+}
+
 .nav-tabs {
 	margin: 0;
 }
 
 .nav-tabs li:last-child a {
 	margin-right: 0 !important;
+}
+
+.well {
+	border: 1px solid #ddd;
+	border-top: none;
 }
 
 .nav-tabs .active a, .nav-tabs .active a:hover {
