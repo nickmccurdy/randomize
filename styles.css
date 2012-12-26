@@ -28,6 +28,15 @@
 .nav-tabs .active a, .nav-tabs .active a:hover {
 	color: #000;
 	background-color: #eee;
+	border-top: 1px solid #eee;
+}
+
+.nav-tabs .active:first-child a {
+	border-left: 1px solid #eee;
+}
+
+.nav-tabs .active:last-child a {
+	border-right: 1px solid #eee;
 }
 
 #results, #reload-button, #options-header, #options {
