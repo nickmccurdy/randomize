@@ -20,6 +20,10 @@
 	margin-right: 0 !important;
 }
 
+.alert {
+	margin-bottom: 0;
+}
+
 .well {
 	border: 1px solid #ddd;
 	border-top: none;
@@ -39,7 +43,7 @@
 	border-right: 1px solid #eee;
 }
 
-#results, #reload-button, #options-header, #options {
+.alert, #results, #reload-button, #options-header, #options {
 	display: none;
 }
 
