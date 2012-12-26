@@ -13,19 +13,15 @@ function display(results) {
 		$("#results").fadeOut(function() {
 			$("#results").html(results);
 		});
-		$("#results").show();
 		$("#results").fadeIn();
 		/*
 		if() { //this is for shit that needs to fade in or out when you're switching modes
 			$("#options").fadeOut(function() {});
-			$("#options").show();
 			$("#options").fadeIn();
 		}
 		*/
 	}
 	else {
-		$("#list_options").hide();
-		$("#number_options").hide();
 		$("#welcome").fadeOut(function() {
 			$("#results").html(results);
 			$("#results").fadeIn();
