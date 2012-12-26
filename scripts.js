@@ -16,35 +16,35 @@ function display(results) {
 		$("#results").fadeIn();
 		/*
 		if() { //this is for shit that needs to fade in or out when you're switching modes
-			$("#options").fadeOut(function() {});
-			$("#options").fadeIn();
+			$("#options").slideUp(function() {});
+			$("#options").slideDown();
 		}
 		*/
 	}
 	else {
-		$("#welcome").fadeOut(function() {
+		$("#welcome").slideUp(function() {
 			$("#results").html(results);
-			$("#results").fadeIn();
-			$("#reload-button").fadeIn();
-			$("#options").fadeIn();
+			$("#results").slideDown();
+			$("#reload-button").slideDown();
+			$("#options").slideDown();
 		});
 	}
 	if(mode=="from_list" || mode=="sort_list") {
-		$("#options-header").fadeIn();
-		$("#number_options").fadeOut(function() {
-			$("#list_options").fadeIn();
+		$("#options-header").slideDown();
+		$("#number_options").slideUp(function() {
+			$("#list_options").slideDown();
 		});
 	}
 	else if(mode=="number") {
-		$("#options-header").fadeIn();
-		$("#list_options").fadeOut(function() {
-			$("#number_options").fadeIn();
+		$("#options-header").slideDown();
+		$("#list_options").slideUp(function() {
+			$("#number_options").slideDown();
 		});
 	}
 	else {
-		$("#list_options").fadeOut();
-		$("#number_options").fadeOut();
-		$("#options-header").fadeOut();
+		$("#list_options").slideUp();
+		$("#number_options").slideUp();
+		$("#options-header").slideUp();
 	}
 }
 
