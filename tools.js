@@ -54,8 +54,8 @@ function number() { //BUGGY
 function from_list()
 {
 	var result;
-	if($("#list_options textarea").val()) {
-		result = $("#list_options textarea").val();
+	if($("#list-options textarea").val()) {
+		result = $("#list-options textarea").val();
 	}
 	else {
 		result = "list is empty";
@@ -78,8 +78,8 @@ function from_list()
 function sort_list()
 {
 	var result;
-	if($("#list_options textarea").val()) {
-		result = $("#list_options textarea").val();
+	if($("#list-options textarea").val()) {
+		result = $("#list-options textarea").val();
 	}
 	else {
 		result = "list is empty";

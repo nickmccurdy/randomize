@@ -29,18 +29,18 @@ function display(results) {
 	}
 	if(mode=="from_list" || mode=="sort_list") {
 		$("#options-header").slideDown();
-		$("#number_options").slideUp(function() {
-			$("#list_options").slideDown();
+		$("#number-options").slideUp(function() {
+			$("#list-options").slideDown();
 		});
 	}
 	else if(mode=="number") {
 		$("#options-header").slideDown();
-		$("#list_options").slideUp(function() {
-			$("#number_options").slideDown();
+		$("#list-options").slideUp(function() {
+			$("#number-options").slideDown();
 		});
 	}
 	else {
-		$("#list_options, #number_options, #options-header").slideUp();
+		$("#list-options, #number-options, #options-header").slideUp();
 	}
 }
 
