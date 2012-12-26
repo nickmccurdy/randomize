@@ -24,9 +24,7 @@ function display(results) {
 	else {
 		$("#welcome").slideUp(function() {
 			$("#results").html(results);
-			$("#results").slideDown();
-			$("#reload-button").slideDown();
-			$("#options").slideDown();
+			$("#results, #reload-button, #options").slideDown();
 		});
 	}
 	if(mode=="from_list" || mode=="sort_list") {
@@ -42,9 +40,7 @@ function display(results) {
 		});
 	}
 	else {
-		$("#list_options").slideUp();
-		$("#number_options").slideUp();
-		$("#options-header").slideUp();
+		$("#list_options, #number_options, #options-header").slideUp();
 	}
 }
 
