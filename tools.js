@@ -45,7 +45,7 @@ var Tools = {
   number: function () { //BUGGY
     switchMode("number");
     if(parseInt($("#minimum").val(), 10) && parseInt($("#maximum").val(), 10)) {
-      mininum = parseInt($("#minimum").val(), 10);
+      minimum = parseInt($("#minimum").val(), 10);
       maximum = parseInt($("#maximum").val(), 10);
     }
     else {
