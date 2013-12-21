@@ -11,10 +11,10 @@ var Tools = {
   coin: function () {
     switchMode("coin");
     var roll = Math.floor(Math.random()*2+1);
-    if(roll==1) {
+    if(roll===1) {
       display("<img src='images/coins/coin_heads.png' alt='heads' height='100' id='text'></img>");
     }
-    if(roll==2) {
+    if(roll===2) {
       display("<img src='images/coins/coin_tails.png' alt='tails' height='100' id='text'></img>");
     }
   },
@@ -34,10 +34,10 @@ var Tools = {
     if(roll>=40 && roll<=52) {
       display("<img src='images/cards/c"+(roll-39)+".png' alt='"+(roll-39)+" of clubs' height='100' id='text'></img>");
     }
-    if(roll==53) {
+    if(roll===53) {
       display("<img src='images/cards/jb.png' alt='black joker' height='100' id='text'></img>");
     }
-    if(roll==54) {
+    if(roll===54) {
       display("<img src='images/cards/jr.png' alt='red joker' height='100' id='text'></img>");
     }
   },
@@ -101,4 +101,4 @@ var Tools = {
     display("<span id='list'><ul><li>"+result+"</li></ul></span>");
   }
 
-}
+};

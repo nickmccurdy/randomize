@@ -27,13 +27,13 @@ function display(results) {
       $("#results, #reload-button, #options").slideDown();
     });
   }
-  if(mode=="from_list" || mode=="sort_list") {
+  if(mode==="from_list" || mode==="sort_list") {
     $("#options-header").slideDown();
     $("#number-options").slideUp(function() {
       $("#list-options").slideDown();
     });
   }
-  else if(mode=="number") {
+  else if(mode==="number") {
     $("#options-header").slideDown();
     $("#list-options").slideUp(function() {
       $("#number-options").slideDown();
