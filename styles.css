@@ -1,9 +1,9 @@
-#main {
+.main {
   display: table;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
-#title {
+.title {
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .nav-tabs li:last-child a {
-  margin-right: 0 !important;
+  margin-right: 0;
 }
 
 .alert {
@@ -43,35 +43,35 @@
   border-right: 1px solid #eee;
 }
 
-.alert, #results, #reload-button, #options-header, #options {
+.alert, .results, .reload-button, .options-header, .options {
   display: none;
 }
 
-#results #number {
+.results .number {
   font-size: 36px;
 }
-#results #text {
+.results .text {
   font-size: 20px;
 }
-#results #list {
+.results .list {
   font-size: 16px;
 }
-#results ul {
+.results ul {
   list-style-type: decimal;
   list-style-position: inside;
 }
 
-#reload-button {
-  margin: 15px 0px;
+.reload-button {
+  margin: 15px 0;
 }
 
-#options input {
+.options input {
   width: 40px;
 }
 
-#number-options #right {
+.number-options .right {
   text-align: right;
 }
-#number-options #left {
+.number-options .left {
   text-align: left;
 }
