@@ -1,77 +1,77 @@
 #main {
-	display: table;
-	margin: 0px auto;
+  display: table;
+  margin: 0px auto;
 }
 
 #title {
-	text-align: center;
+  text-align: center;
 }
 
 .split {
-	width: 50%;
+  width: 50%;
 }
 
 .nav-tabs {
-	border: 1px solid #ddd;
-	margin: 0;
+  border: 1px solid #ddd;
+  margin: 0;
 }
 
 .nav-tabs li:last-child a {
-	margin-right: 0 !important;
+  margin-right: 0 !important;
 }
 
 .alert {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .well {
-	border: 1px solid #ddd;
-	border-top: none;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 
 .nav-tabs .active a, .nav-tabs .active a:hover {
-	color: #000;
-	background-color: #eee;
-	border-top: 1px solid #eee;
+  color: #000;
+  background-color: #eee;
+  border-top: 1px solid #eee;
 }
 
 .nav-tabs .active:first-child a {
-	border-left: 1px solid #eee;
+  border-left: 1px solid #eee;
 }
 
 .nav-tabs .active:last-child a {
-	border-right: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 .alert, #results, #reload-button, #options-header, #options {
-	display: none;
+  display: none;
 }
 
 #results #number {
-	font-size: 36px;
+  font-size: 36px;
 }
 #results #text {
-	font-size: 20px;
+  font-size: 20px;
 }
 #results #list {
-	font-size: 16px;
+  font-size: 16px;
 }
 #results ul {
-	list-style-type: decimal;
-	list-style-position: inside;
+  list-style-type: decimal;
+  list-style-position: inside;
 }
 
 #reload-button {
-	margin: 15px 0px;
+  margin: 15px 0px;
 }
 
 #options input {
-	width: 40px;
+  width: 40px;
 }
 
 #number-options #right {
-	text-align: right;
+  text-align: right;
 }
 #number-options #left {
-	text-align: left;
+  text-align: left;
 }

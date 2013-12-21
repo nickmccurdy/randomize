@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="utf-8">
-	<!-- basic info -->
-	<title>Randomize 1.0</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- css -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css">
-	<!-- icons -->
-	<link rel="icon" href="images/favicon.png">
+  <!-- basic info -->
+  <title>Randomize 1.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- icons -->
+  <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
 
-	<div class="container" id="main">
+  <div class="container" id="main">
 
-		<h1 id="title">Randomize</h1>
+    <h1 id="title">Randomize</h1>
 
-		<ul class="nav nav-tabs">
-			<li><a href="#" data-toggle="tab" id="dice-button">
-				<i class="glyphicon glyphicon-th-large"></i> Dice
-			</a></li>
-			<li><a href="#" data-toggle="tab" id="coins-button">
-				<i class="glyphicon glyphicon-adjust"></i> Coins
-			</a></li>
-			<li><a href="#" data-toggle="tab" id="card-button">
-				<i class="glyphicon glyphicon-book"></i> Cards
-			</a></li>
-			<li><a href="#" data-toggle="tab" id="numbers-button">
-				<i class="glyphicon glyphicon-question-sign"></i> Numbers
-			</a></li>
-			<li><a href="#" data-toggle="tab" id="from-list-button">
-				<i class="glyphicon glyphicon-hand-right"></i> From List
-			</a></li>
-			<li><a href="#" data-toggle="tab" id="sort-list-button">
-				<i class="glyphicon glyphicon-random"></i> Sort List
-			</a></li>
-		</ul>
+    <ul class="nav nav-tabs">
+      <li><a href="#" data-toggle="tab" id="dice-button">
+        <i class="glyphicon glyphicon-th-large"></i> Dice
+      </a></li>
+      <li><a href="#" data-toggle="tab" id="coins-button">
+        <i class="glyphicon glyphicon-adjust"></i> Coins
+      </a></li>
+      <li><a href="#" data-toggle="tab" id="card-button">
+        <i class="glyphicon glyphicon-book"></i> Cards
+      </a></li>
+      <li><a href="#" data-toggle="tab" id="numbers-button">
+        <i class="glyphicon glyphicon-question-sign"></i> Numbers
+      </a></li>
+      <li><a href="#" data-toggle="tab" id="from-list-button">
+        <i class="glyphicon glyphicon-hand-right"></i> From List
+      </a></li>
+      <li><a href="#" data-toggle="tab" id="sort-list-button">
+        <i class="glyphicon glyphicon-random"></i> Sort List
+      </a></li>
+    </ul>
 
-		<div class="alert alert-danger" id="invalid-options-alert">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<strong>Error:</strong> Invalid options.
-		</div>
+    <div class="alert alert-danger" id="invalid-options-alert">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Error:</strong> Invalid options.
+    </div>
 
-		<div class="well clearfix">
+    <div class="well clearfix">
 
-			<div class="split pull-left">
-				<h2 id="results-header">Results</h2>
-				<div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
-				<div id="results"></div>
-				<button class="btn btn-xs btn-primary" id="reload-button" type="button" onclick="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
-			</div>
+      <div class="split pull-left">
+        <h2 id="results-header">Results</h2>
+        <div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
+        <div id="results"></div>
+        <button class="btn btn-xs btn-primary" id="reload-button" type="button" onclick="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
+      </div>
 
-			<div class="split pull-right">
-				<h2 id="options-header">Options</h2>
-				<div id="options">
-					<table id="number-options">
-						<tr><td id="right">From</td><td id="left"><input type="number" id="minimum" value="1"></td></tr>
-						<tr><td id="right">To</td><td id="left"><input type="number" id="maximum" value="10"></td></tr>
-					</table>
-					<span id="list-options">
-						<textarea placeholder="Enter list items here, with one item per line."></textarea><br>
-					</span>
-				</div>
-			</div>
+      <div class="split pull-right">
+        <h2 id="options-header">Options</h2>
+        <div id="options">
+          <table id="number-options">
+            <tr><td id="right">From</td><td id="left"><input type="number" id="minimum" value="1"></td></tr>
+            <tr><td id="right">To</td><td id="left"><input type="number" id="maximum" value="10"></td></tr>
+          </table>
+          <span id="list-options">
+            <textarea placeholder="Enter list items here, with one item per line."></textarea><br>
+          </span>
+        </div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
 <!-- scripts -->
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
