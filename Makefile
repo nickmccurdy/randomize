@@ -3,7 +3,7 @@ lint: jslint csslint
 
 # Run jslint on all JavaScript code
 jslint:
-	jslint *.js --terse --browser --indent=2 --plusplus --predef $$
+	jslint *.js --terse --browser --white --indent=2 --plusplus --predef $$
 
 # Run csslint on all CSS code
 csslint:
