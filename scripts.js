@@ -88,27 +88,13 @@ function preload() {
 
 $(function($) {
 	// buttons
-	$("#dice-button").click(function() {
-		die();
-	});
-	$("#coins-button").click(function() {
-		coin();
-	});
-	$("#card-button").click(function() {
-		card();
-	});
-	$("#numbers-button").click(function() {
-		number();
-	});
-	$("#from-list-button").click(function() {
-		from_list();
-	});
-	$("#sort-list-button").click(function() {
-		sort_list();
-	});
-	$("#reload-button").click(function() {
-		reload();
-	});
+	$("#dice-button").click(die);
+	$("#coins-button").click(coin);
+	$("#card-button").click(card);
+	$("#numbers-button").click(number);
+	$("#from-list-button").click(from_list);
+	$("#sort-list-button").click(sort_list);
+	$("#reload-button").click(reload);
 	
 	// preload
 	preload();
