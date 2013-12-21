@@ -45,14 +45,7 @@ function display(results) {
 }
 
 function reload() {
-  switch(mode) {
-    case "die": Tools.die(); break;
-    case "coin": Tools.coin(); break;
-    case "card": Tools.card(); break;
-    case "number": Tools.number(); break;
-    case "from_list": Tools.from_list(); break;
-    case "sort_list": Tools.sort_list(); break;
-  }
+  Tools[mode]();
 }
 
 
