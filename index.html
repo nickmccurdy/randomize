@@ -5,7 +5,7 @@
 	<title>Randomize 1.0</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 	<!-- icons -->
 	<link rel="icon" href="images/favicon.png">
@@ -13,32 +13,32 @@
 
 <body>
 
-	<div class="container-fluid" id="main">
+	<div class="container" id="main">
 
 		<h1 id="title">Randomize</h1>
 
 		<ul class="nav nav-tabs">
 			<li><a href="#" data-toggle="tab" id="dice-button">
-				<i class="icon-th-large"></i> Dice
+				<i class="glyphicon glyphicon-th-large"></i> Dice
 			</a></li>
 			<li><a href="#" data-toggle="tab" id="coins-button">
-				<i class="icon-adjust"></i> Coins
+				<i class="glyphicon glyphicon-adjust"></i> Coins
 			</a></li>
 			<li><a href="#" data-toggle="tab" id="card-button">
-				<i class="icon-book"></i> Cards
+				<i class="glyphicon glyphicon-book"></i> Cards
 			</a></li>
 			<li><a href="#" data-toggle="tab" id="numbers-button">
-				<i class="icon-question-sign"></i> Numbers
+				<i class="glyphicon glyphicon-question-sign"></i> Numbers
 			</a></li>
 			<li><a href="#" data-toggle="tab" id="from-list-button">
-				<i class="icon-hand-right"></i> From List
+				<i class="glyphicon glyphicon-hand-right"></i> From List
 			</a></li>
 			<li><a href="#" data-toggle="tab" id="sort-list-button">
-				<i class="icon-random"></i> Sort List
+				<i class="glyphicon glyphicon-random"></i> Sort List
 			</a></li>
 		</ul>
 
-		<div class="alert alert-error" id="invalid-options-alert">
+		<div class="alert alert-danger" id="invalid-options-alert">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
 			<strong>Error:</strong> Invalid options.
 		</div>
@@ -47,9 +47,9 @@
 
 			<div class="split pull-left">
 				<h2 id="results-header">Results</h2>
-				<div id="welcome">Click on a tool to start.<br><span class="muted">You can then click here to reload.</span></div>
+				<div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
 				<div id="results"></div>
-				<button class="btn btn-mini btn-primary" id="reload-button" type="button" onclick="reload()"><i class="icon-refresh icon-white"></i>Reload</button>
+				<button class="btn btn-xs btn-primary" id="reload-button" type="button" onclick="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
 			</div>
 
 			<div class="split pull-right">
@@ -70,7 +70,7 @@
 
 <!-- scripts -->
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="scripts.js"></script>
 <script src="tools.js"></script>
 
