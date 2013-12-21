@@ -46,12 +46,12 @@ function display(results) {
 
 function reload() {
   switch(mode) {
-    case "die": die(); break;
-    case "coin": coin(); break;
-    case "card": card(); break;
-    case "number": number(); break;
-    case "from_list": from_list(); break;
-    case "sort_list": sort_list(); break;
+    case "die": Tools.die(); break;
+    case "coin": Tools.coin(); break;
+    case "card": Tools.card(); break;
+    case "number": Tools.number(); break;
+    case "from_list": Tools.from_list(); break;
+    case "sort_list": Tools.sort_list(); break;
   }
 }
 
@@ -88,12 +88,12 @@ function preload() {
 
 $(function($) {
   // buttons
-  $("#dice-button").click(die);
-  $("#coins-button").click(coin);
-  $("#card-button").click(card);
-  $("#numbers-button").click(number);
-  $("#from-list-button").click(from_list);
-  $("#sort-list-button").click(sort_list);
+  $("#dice-button").click(Tools.die);
+  $("#coins-button").click(Tools.coin);
+  $("#card-button").click(Tools.card);
+  $("#numbers-button").click(Tools.number);
+  $("#from-list-button").click(Tools.from_list);
+  $("#sort-list-button").click(Tools.sort_list);
   $("#reload-button").click(reload);
   
   // preload
