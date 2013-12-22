@@ -65,19 +65,27 @@ var View = {
       preload_html += "<img src='" + to_preload.shift() + "'>";
     }
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
+  },
+
+  setBinds: function (binds) {
+    $.each(binds, function (el, fun) {
+      $(el).click(fun);
+    });
   }
 
 };
 
 $(function ($) {
   // buttons
-  $("#dice-button").click(Tools.die);
-  $("#coins-button").click(Tools.coin);
-  $("#card-button").click(Tools.card);
-  $("#numbers-button").click(Tools.number);
-  $("#from-list-button").click(Tools.from_list);
-  $("#sort-list-button").click(Tools.sort_list);
-  $(".reload-button").click(View.reload);
+  View.setBinds({
+    "#dice-button":      Tools.die,
+    "#coins-button":     Tools.coin,
+    "#card-button":      Tools.card,
+    "#numbers-button":   Tools.number,
+    "#from-list-button": Tools.from_list,
+    "#sort-list-button": Tools.sort_list,
+    ".reload-button":    View.reload
+  });
 
   // preload
   View.preload();
