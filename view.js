@@ -77,7 +77,7 @@ var View = {
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
   }
 
-}
+};
 
 $(function ($) {
   // buttons
