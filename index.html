@@ -15,28 +15,42 @@
 
   <div class="container main">
 
-    <h1 class="title">Randomize</h1>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Randomize</a>
+      </div>
 
-    <ul class="nav nav-tabs">
-      <li><a href="#" data-toggle="tab" id="dice-button">
-        <i class="glyphicon glyphicon-stop"></i> Dice
-      </a></li>
-      <li><a href="#" data-toggle="tab" id="coins-button">
-        <i class="glyphicon glyphicon-adjust"></i> Coins
-      </a></li>
-      <li><a href="#" data-toggle="tab" id="card-button">
-        <i class="glyphicon glyphicon-book"></i> Cards
-      </a></li>
-      <li><a href="#" data-toggle="tab" id="numbers-button">
-        <i class="glyphicon glyphicon-question-sign"></i> Numbers
-      </a></li>
-      <li><a href="#" data-toggle="tab" id="from-list-button">
-        <i class="glyphicon glyphicon-list"></i> From List
-      </a></li>
-      <li><a href="#" data-toggle="tab" id="sort-list-button">
-        <i class="glyphicon glyphicon-random"></i> Sort List
-      </a></li>
-    </ul>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#" data-toggle="tab" id="dice-button">
+            <i class="glyphicon glyphicon-stop"></i> Dice
+          </a></li>
+          <li><a href="#" data-toggle="tab" id="coins-button">
+            <i class="glyphicon glyphicon-adjust"></i> Coins
+          </a></li>
+          <li><a href="#" data-toggle="tab" id="card-button">
+            <i class="glyphicon glyphicon-book"></i> Cards
+          </a></li>
+          <li><a href="#" data-toggle="tab" id="numbers-button">
+            <i class="glyphicon glyphicon-question-sign"></i> Numbers
+          </a></li>
+          <li><a href="#" data-toggle="tab" id="from-list-button">
+            <i class="glyphicon glyphicon-list"></i> From List
+          </a></li>
+          <li><a href="#" data-toggle="tab" id="sort-list-button">
+            <i class="glyphicon glyphicon-random"></i> Sort List
+          </a></li>
+        </ul>
+      </div>
+    </nav>
 
     <div class="alert alert-danger" id="invalid-options-alert">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
