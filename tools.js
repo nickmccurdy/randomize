@@ -58,13 +58,8 @@ var Tools = {
   number: function () { //BUGGY
     View.mode = "number";
     var minimum, maximum, roll;
-    if (parseInt($("#minimum").val(), 10) && parseInt($("#maximum").val(), 10)) {
-      minimum = parseInt($("#minimum").val(), 10);
-      maximum = parseInt($("#maximum").val(), 10);
-    } else {
-      minimum = 1;
-      maximum = 10;
-    }
+    minimum = parseInt($("#minimum").val(), 10) || 1;
+    maximum = parseInt($("#maximum").val(), 10) || 10;
     roll = Math.floor(Math.random() * maximum + minimum);
     View.display("<span class='number'>" + roll + " </span><br><span class='mute'>from " + minimum + "  to " + maximum + "  </span>");
   },
