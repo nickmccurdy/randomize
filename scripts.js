@@ -1,4 +1,5 @@
 // system scripts
+"use strict";
 
 $.fx.speeds._default = 200;
 var mode,

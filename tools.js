@@ -1,4 +1,5 @@
 // mode scripts
+"use strict";
 
 var Tools = {
 
