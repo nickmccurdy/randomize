@@ -75,7 +75,7 @@ var View = {
 
 };
 
-$(function ($) {
+$(function () {
   // buttons
   View.setBinds({
     "#dice-button":      Tools.die,
