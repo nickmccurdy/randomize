@@ -51,17 +51,17 @@ var View = {
     coinImages = ["images/coins/coin_heads.png", "images/coins/coin_tails.png"];
 
     // dice
-    dieImages = [1, 2, 3, 4, 5, 6].map(function (value) {
+    dieImages = _.range(1, 7).map(function (value) {
       return "images/dice/die_" + value + ".png";
     });
 
     // cards
     cardImages = [];
     ["c", "d", "h", "s"].forEach(function (suit) {
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].forEach(function (value) {
+      _.range(1, 14).forEach(function (value) {
         cardImages.push("images/cards/" + suit + value + ".png");
       });
-    }, []);
+    });
     cardImages.push("images/cards/jb.png", "images/cards/jr.png");
 
     images = [].concat(coinImages, dieImages, cardImages);
@@ -74,7 +74,7 @@ var View = {
   },
 
   setBinds: function (binds) {
-    $.each(binds, function (el, fun) {
+    _.each(binds, function (fun, el) {
       $(el).click(fun);
     });
   }
