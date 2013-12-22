@@ -4,11 +4,8 @@
 var Utilities = {
 
   getShuffledInput: function () {
-    return ($(".list-options textarea").val() || "list is empty")
-      .split("\n")
-      .sort(function () {
-        return 0.5 - Math.random();
-      });
+    var inputText = ($(".list-options textarea").val() || "list is empty");
+    return _.shuffle(inputText.split("\n"));
   }
 
 };
@@ -17,24 +14,19 @@ var Tools = {
 
   die: function () {
     View.mode = "die";
-    var result = Math.floor(Math.random() * 6 + 1);
+    var result = _.random(1, 7);
     View.display("<img src='images/dice/die_" + result + " .png' alt='" + result + " ' height='100' class='number'></img>");
   },
 
   coin: function () {
     View.mode = "coin";
-    var result = Math.floor(Math.random() * 2 + 1);
-    if (result === 1) {
-      View.display("<img src='images/coins/coin_heads.png' alt='heads' height='100' class='text'></img>");
-    }
-    if (result === 2) {
-      View.display("<img src='images/coins/coin_tails.png' alt='tails' height='100' class='text'></img>");
-    }
+    var result = _.sample(["heads", "tails"]);
+    View.display("<img src='images/coins/coin_" + result + ".png' alt='" + result + "' height='100' class='text'></img>");
   },
 
   card: function () {
     View.mode = "card";
-    var result = Math.floor(Math.random() * 54 + 1);
+    var result = _.random(1, 55);
     if (result >= 1 && result <= 13) {
       View.display("<img src='images/cards/d" + result + " .png' alt='" + result + "  of diamonds' height='100' class='text'></img>");
     }
@@ -60,7 +52,7 @@ var Tools = {
     var minimum, maximum, result;
     minimum = parseInt($("#minimum").val(), 10) || 1;
     maximum = parseInt($("#maximum").val(), 10) || 10;
-    result = Math.floor(Math.random() * maximum + minimum);
+    result = _.random(minimum, maximum + 1);
     View.display("<span class='number'>" + result + " </span><br><span class='mute'>from " + minimum + "  to " + maximum + "  </span>");
   },
 
