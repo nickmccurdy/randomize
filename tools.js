@@ -4,13 +4,13 @@
 var Tools = {
 
   die: function () {
-    View.switchMode("die");
+    View.mode = "die";
     var roll = Math.floor(Math.random() * 6 + 1);
     View.display("<img src='images/dice/die_" + roll + " .png' alt='" + roll + " ' height='100' class='number'></img>");
   },
 
   coin: function () {
-    View.switchMode("coin");
+    View.mode = "coin";
     var roll = Math.floor(Math.random() * 2 + 1);
     if (roll === 1) {
       View.display("<img src='images/coins/coin_heads.png' alt='heads' height='100' class='text'></img>");
@@ -21,7 +21,7 @@ var Tools = {
   },
 
   card: function () {
-    View.switchMode("card");
+    View.mode = "card";
     var roll = Math.floor(Math.random() * 54 + 1);
     if (roll >= 1 && roll <= 13) {
       View.display("<img src='images/cards/d" + roll + " .png' alt='" + roll + "  of diamonds' height='100' class='text'></img>");
@@ -44,7 +44,7 @@ var Tools = {
   },
 
   number: function () { //BUGGY
-    View.switchMode("number");
+    View.mode = "number";
     var minimum, maximum, roll;
     if (parseInt($("#minimum").val(), 10) && parseInt($("#maximum").val(), 10)) {
       minimum = parseInt($("#minimum").val(), 10);
@@ -64,7 +64,7 @@ var Tools = {
     } else {
       result = "list is empty";
     }
-    View.switchMode("from_list");
+    View.mode = "from_list";
     text_array = result.split("\n");
     text_array = text_array.sort(function () {
       return 0.5 - Math.random();
@@ -86,7 +86,7 @@ var Tools = {
     } else {
       result = "list is empty";
     }
-    View.switchMode("sort_list");
+    View.mode = "sort_list";
     text_array = result.split("\n");
     text_array = text_array.sort(function () {
       return 0.5 - Math.random();

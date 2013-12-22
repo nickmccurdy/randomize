@@ -44,10 +44,6 @@ var View = {
     Tools[View.mode]();
   },
 
-  switchMode: function (mode_new) {
-    View.mode = mode_new;
-  },
-
   preload: function () {
     var to_preload = [], i, preload_html = "", preload_size;
     // coins
