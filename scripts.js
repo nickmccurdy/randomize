@@ -1,12 +1,12 @@
 // system scripts
 
 $.fx.speeds._default = 200;
-var mode;
-var mode_last;
-var options_display = false;
-var nothing = "";
-var minimum = 1;
-var maximum = 10;
+var mode,
+  mode_last,
+  options_display = false,
+  nothing = "",
+  minimum = 1,
+  maximum = 10;
 
 function display(results) {
   if ($(".results").is(":visible")) {
@@ -52,8 +52,7 @@ function switchMode(mode_new) {
 }
 
 function preload() {
-  var to_preload = [];
-  var i;
+  var to_preload = [], i, preload_html = "", preload_size;
   // coins
   to_preload.push("images/coins/coin_heads.png");
   to_preload.push("images/coins/coin_tails.png");
@@ -68,8 +67,7 @@ function preload() {
   to_preload.push("images/cards/jr.png");
 
   // load stuff!
-  var preload_html = "";
-  var preload_size = to_preload.length;
+  preload_size = to_preload.length;
   for (i = 0; i < preload_size; i++) {
     preload_html += "<img src='" + to_preload.shift() + "'>";
   }

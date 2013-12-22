@@ -57,14 +57,13 @@ var Tools = {
   },
 
   from_list: function () {
-    var result;
+    var result, text_array = [];
     if ($(".list-options textarea").val()) {
       result = $(".list-options textarea").val();
     } else {
       result = "list is empty";
     }
     switchMode("from_list");
-    var text_array = [];
     text_array = result.split("\n");
     text_array = text_array.sort(function () {
       return 0.5 - Math.random();
@@ -80,14 +79,13 @@ var Tools = {
   },
 
   sort_list: function () {
-    var result;
+    var result, text_array = [];
     if ($(".list-options textarea").val()) {
       result = $(".list-options textarea").val();
     } else {
       result = "list is empty";
     }
     switchMode("sort_list");
-    var text_array = [];
     text_array = result.split("\n");
     text_array = text_array.sort(function () {
       return 0.5 - Math.random();
