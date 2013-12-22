@@ -45,16 +45,16 @@ var Tools = {
 
   number: function () { //BUGGY
     View.switchMode("number");
+    var minimum, maximum, roll;
     if (parseInt($("#minimum").val(), 10) && parseInt($("#maximum").val(), 10)) {
-      View.minimum = parseInt($("#minimum").val(), 10);
-      View.maximum = parseInt($("#maximum").val(), 10);
+      minimum = parseInt($("#minimum").val(), 10);
+      maximum = parseInt($("#maximum").val(), 10);
     } else {
-      View.minimum = 1;
-      View.maximum = 10;
+      minimum = 1;
+      maximum = 10;
     }
-    var roll = Math.floor(Math.random() * View.maximum + View.minimum);
-    View.display("<span class='number'>" + roll + " </span><br><span class='mute'>from " + View.minimum + "  to " + View.maximum + "  </span>");
-
+    roll = Math.floor(Math.random() * maximum + minimum);
+    View.display("<span class='number'>" + roll + " </span><br><span class='mute'>from " + minimum + "  to " + maximum + "  </span>");
   },
 
   from_list: function () {

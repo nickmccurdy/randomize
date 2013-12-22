@@ -6,11 +6,6 @@ $.fx.speeds._default = 200;
 var View = {
 
   mode: undefined,
-  mode_last: undefined,
-  options_display: false,
-  nothing: "",
-  minimum: 1,
-  maximum: 10,
 
   display: function (results) {
     if ($(".results").is(":visible")) {
@@ -50,7 +45,6 @@ var View = {
   },
 
   switchMode: function (mode_new) {
-    View.mode_last = View.mode;
     View.mode = mode_new;
   },
 
