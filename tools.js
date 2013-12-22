@@ -1,6 +1,18 @@
 // mode scripts
 "use strict";
 
+var Utilities = {
+
+  getShuffledInput: function () {
+    return ($(".list-options textarea").val() || "list is empty")
+      .split("\n")
+      .sort(function () {
+        return 0.5 - Math.random();
+      });
+  }
+
+};
+
 var Tools = {
 
   die: function () {
@@ -58,18 +70,8 @@ var Tools = {
   },
 
   from_list: function () {
-    var result, text_array = [];
-    if ($(".list-options textarea").val()) {
-      result = $(".list-options textarea").val();
-    } else {
-      result = "list is empty";
-    }
     View.mode = "from_list";
-    text_array = result.split("\n");
-    text_array = text_array.sort(function () {
-      return 0.5 - Math.random();
-    });
-    result = text_array[0];
+    var result = Utilities.getShuffledInput()[0];
     /*
     var quantity = 2;
     for(var i=0;i<quantity;i++) {
@@ -80,18 +82,8 @@ var Tools = {
   },
 
   sort_list: function () {
-    var result, text_array = [];
-    if ($(".list-options textarea").val()) {
-      result = $(".list-options textarea").val();
-    } else {
-      result = "list is empty";
-    }
     View.mode = "sort_list";
-    text_array = result.split("\n");
-    text_array = text_array.sort(function () {
-      return 0.5 - Math.random();
-    });
-    result = text_array.join("</li><li>");
+    var result = Utilities.getShuffledInput().join("</li><li>");
     View.display("<span class='list'><ul><li>" + result + " </li></ul></span>");
   }
 
