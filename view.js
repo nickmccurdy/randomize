@@ -58,11 +58,9 @@ var View = {
     // cards
     cardImages = [];
     ["c", "d", "h", "s"].forEach(function (suit) {
-      var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-        suitCards = values.forEach(function (value) {
-          return "images/cards/" + suit + value + ".png";
-        });
-      cardImages = cardImages.concat(suitCards);
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].forEach(function (value) {
+        cardImages.push("images/cards/" + suit + value + ".png");
+      });
     }, []);
     cardImages.push("images/cards/jb.png", "images/cards/jr.png");
 
@@ -70,7 +68,7 @@ var View = {
 
     // load stuff!
     preload_html = images.reduce(function (html, file) {
-      html = html + "<img src='" + file + "'>";
+      return html + "<img src='" + file + "'>";
     }, "");
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
   },
