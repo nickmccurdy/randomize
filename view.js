@@ -45,25 +45,33 @@ var View = {
   },
 
   preload: function () {
-    var to_preload = [], i, preload_html = "", preload_size;
+    var images, coinImages, dieImages, cardImages, preload_html;
+
     // coins
-    to_preload.push("images/coins/coin_heads.png");
-    to_preload.push("images/coins/coin_tails.png");
+    coinImages = ["images/coins/coin_heads.png", "images/coins/coin_tails.png"];
+
     // dice
-    for (i = 1; i <= 6; i++) { to_preload.push("images/dice/die_" + i + ".png"); }
+    dieImages = [1, 2, 3, 4, 5, 6].map(function (value) {
+      return "images/dice/die_" + value + ".png";
+    });
+
     // cards
-    for (i = 1; i <= 13; i++) { to_preload.push("images/cards/c" + i + ".png"); }
-    for (i = 1; i <= 13; i++) { to_preload.push("images/cards/d" + i + ".png"); }
-    for (i = 1; i <= 13; i++) { to_preload.push("images/cards/h" + i + ".png"); }
-    for (i = 1; i <= 13; i++) { to_preload.push("images/cards/s" + i + ".png"); }
-    to_preload.push("images/cards/jb.png");
-    to_preload.push("images/cards/jr.png");
+    cardImages = [];
+    ["c", "d", "h", "s"].forEach(function (suit) {
+      var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        suitCards = values.forEach(function (value) {
+          return "images/cards/" + suit + value + ".png";
+        });
+      cardImages = cardImages.concat(suitCards);
+    }, []);
+    cardImages.push("images/cards/jb.png", "images/cards/jr.png");
+
+    images = [].concat(coinImages, dieImages, cardImages);
 
     // load stuff!
-    preload_size = to_preload.length;
-    for (i = 0; i < preload_size; i++) {
-      preload_html += "<img src='" + to_preload.shift() + "'>";
-    }
+    preload_html = images.reduce(function (html, file) {
+      html = html + "<img src='" + file + "'>";
+    }, "");
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
   },
 
