@@ -9,6 +9,9 @@ jslint:
 csslint:
 	csslint *.css --quiet
 
+doc:
+	docco *.js
+
 # Deploy the app by merging master into gh-pages and pushing
 deploy:
 	git checkout gh-pages

@@ -1,15 +1,14 @@
-.split {
-  width: 50%;
-}
-
+/* Remove the extra space between alerts and the tool UI */
 .alert {
   margin-bottom: 0;
 }
 
+/* UI that should be hidden by default */
 .alert, .results, .reload-button, .options-header, .options {
   display: none;
 }
 
+/* Tool results */
 .results .number {
   font-size: 36px;
 }
@@ -23,17 +22,10 @@
   list-style-type: decimal;
 }
 
+/* Tool UI */
 .reload-button {
   margin: 15px 0;
 }
-
 .options input {
-  width: 40px;
-}
-
-.number-options .right {
-  text-align: right;
-}
-.number-options .left {
-  text-align: left;
+  width: 100px;
 }
