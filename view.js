@@ -26,12 +26,6 @@ var View = {
         $(".results").html(results);
       });
       $(".results").fadeIn();
-      /*
-      if () { //this is for shit that needs to fade in or out when you're switching modes
-        $(".options").slideUp(function () {});
-        $(".options").slideDown();
-      }
-      */
     } else {
       $("#welcome").slideUp(function () {
         $(".results").html(results);

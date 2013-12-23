@@ -88,13 +88,6 @@ var Tools = {
 
   // Picks a random element from a given list of text and displays it
   from_list: function () {
-    /*
-    var quantity = 2;
-    for(var i=0;i<quantity;i++) {
-      result = result + " <br>" + text_array[i+1];
-    }
-    */
-
     View.display("from_list", {
       result: Utilities.getShuffledInput()[0]
     });
