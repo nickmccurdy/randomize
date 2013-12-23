@@ -10,9 +10,9 @@ var View = {
   // the mode can be set to.
   mode: undefined,
 
-  // Displays the given results data on the page. Renders the data using the
-  // template for the appropriate mode, represented in the data argument under
-  // the "mode" key. Animates any transitions between results and tools as
+  // Displays the given tool results data on the page. Renders the data using
+  // the template for the appropriate mode, represented in the data argument
+  // under the "mode" key. Animates any transitions between results and tools as
   // needed.
   display: function (data) {
     // Update the current mode
@@ -107,12 +107,12 @@ var View = {
 // Sets up the page when the document is ready
 $(function () {
   View.setBinds({
-    "#dice-button":      Tools.die,
-    "#coins-button":     Tools.coin,
-    "#card-button":      Tools.card,
-    "#numbers-button":   Tools.number,
-    "#from-list-button": Tools.from_list,
-    "#sort-list-button": Tools.sort_list,
+    "#dice-button":      function () { View.display(Tools.die()); },
+    "#coins-button":     function () { View.display(Tools.coin()); },
+    "#card-button":      function () { View.display(Tools.card()); },
+    "#numbers-button":   function () { View.display(Tools.number()); },
+    "#from-list-button": function () { View.display(Tools.from_list()); },
+    "#sort-list-button": function () { View.display(Tools.sort_list()); },
     ".reload-button":    View.reload
   });
 
