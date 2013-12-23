@@ -10,15 +10,16 @@ var View = {
   // the mode can be set to.
   mode: undefined,
 
-  // Displays the given results data for the given mode on the page. Renders the
-  // data using the template for the appropriate mode. Animates any transitions
-  // between results and tools as needed.
-  display: function (mode, data) {
+  // Displays the given results data on the page. Renders the data using the
+  // template for the appropriate mode, represented in the data argument under
+  // the "mode" key. Animates any transitions between results and tools as
+  // needed.
+  display: function (data) {
     // Update the current mode
-    View.mode = mode;
+    View.mode = data.mode;
 
     // Render the data with the appropriate template
-    var results = _.template($("#" + mode + "-template").html(), data);
+    var results = _.template($("#" + data.mode + "-template").html(), data);
 
     // Set the result HTML on the page
     if ($(".results").is(":visible")) {

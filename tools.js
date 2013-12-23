@@ -20,14 +20,16 @@ var Tools = {
 
   // Picks a random number from 1 to 6 and displays it on a die image
   die: function () {
-    View.display("die", {
+    View.display({
+      mode: "die",
       result: _.random(1, 7)
     });
   },
 
   // Flips a coin and displays a penny on heads or tails
   coin: function () {
-    View.display("coin", {
+    View.display({
+      mode: "coin",
       result: _.sample(["heads", "tails"])
     });
   },
@@ -65,7 +67,8 @@ var Tools = {
       alt = "red joker";
     }
 
-    View.display("card", {
+    View.display({
+      mode: "card",
       file: file,
       alt: alt
     });
@@ -79,7 +82,8 @@ var Tools = {
       minimum = parseInt($("#minimum").val(), 10) || 1,
       maximum = parseInt($("#maximum").val(), 10) || 10;
 
-    View.display("number", {
+    View.display({
+      mode: "number",
       result: _.random(minimum, maximum + 1),
       minimum: minimum,
       maximum: maximum
@@ -88,14 +92,16 @@ var Tools = {
 
   // Picks a random element from a given list of text and displays it
   from_list: function () {
-    View.display("from_list", {
+    View.display({
+      mode: "from_list",
       result: Utilities.getShuffledInput()[0]
     });
   },
 
   // Randomly sorts a given list of text and displays it in an numbered list
   sort_list: function () {
-    View.display("sort_list", {
+    View.display({
+      mode: "sort_list",
       result: Utilities.getShuffledInput().join("</li><li>")
     });
   }
