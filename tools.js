@@ -20,18 +20,14 @@ var Tools = {
 
   // Picks a random number from 1 to 6 and displays it on a die image
   die: function () {
-    View.mode = "die";
-
-    View.display(_.template($("#die-template").html(), {
+    View.display("die", _.template($("#die-template").html(), {
       result: _.random(1, 7)
     }));
   },
 
   // Flips a coin and displays a penny on heads or tails
   coin: function () {
-    View.mode = "coin";
-
-    View.display(_.template($("#coin-template").html(), {
+    View.display("coin", _.template($("#coin-template").html(), {
       result: _.sample(["heads", "tails"])
     }));
   },
@@ -39,8 +35,6 @@ var Tools = {
   // Picks a random card from a deck of 52 cards (with two added Jokers) and
   // displays the appropriate card image
   card: function () {
-    View.mode = "card";
-
     var result = _.random(1, 55),
       file,
       alt;
@@ -71,7 +65,7 @@ var Tools = {
       alt = "red joker";
     }
 
-    View.display(_.template($("#card-template").html(), {
+    View.display("card", _.template($("#card-template").html(), {
       file: file,
       alt: alt
     }));
@@ -81,13 +75,11 @@ var Tools = {
   // By default, the minimum and maximum values are 1 and 10. The appropriate
   // number is displayed with the minimum and maximum values.
   number: function () { //BUGGY
-    View.mode = "number";
-
     var
       minimum = parseInt($("#minimum").val(), 10) || 1,
       maximum = parseInt($("#maximum").val(), 10) || 10;
 
-    View.display(_.template($("#number-template").html(), {
+    View.display("number", _.template($("#number-template").html(), {
       result: _.random(minimum, maximum + 1),
       minimum: minimum,
       maximum: maximum
@@ -96,8 +88,6 @@ var Tools = {
 
   // Picks a random element from a given list of text and displays it
   from_list: function () {
-    View.mode = "from_list";
-
     /*
     var quantity = 2;
     for(var i=0;i<quantity;i++) {
@@ -105,16 +95,14 @@ var Tools = {
     }
     */
 
-    View.display(_.template($("#from_list-template").html(), {
+    View.display("from_list", _.template($("#from_list-template").html(), {
       result: Utilities.getShuffledInput()[0]
     }));
   },
 
   // Randomly sorts a given list of text and displays it in an numbered list
   sort_list: function () {
-    View.mode = "sort_list";
-
-    View.display(_.template($("#sort_list-template").html(), {
+    View.display("sort_list", _.template($("#sort_list-template").html(), {
       result: Utilities.getShuffledInput().join("</li><li>")
     }));
   }

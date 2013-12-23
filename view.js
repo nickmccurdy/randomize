@@ -10,9 +10,12 @@ var View = {
   // the mode can be set to.
   mode: undefined,
 
-  // Displays given HTML code (results) on the page. Animates any transitions
-  // between results and tools as needed.
-  display: function (results) {
+  // Displays the given HTML code (results) for the given mode on the page.
+  // Animates any transitions between results and tools as needed.
+  display: function (mode, results) {
+    // Update the current mode
+    View.mode = mode;
+
     // Set the result HTML on the page
     if ($(".results").is(":visible")) {
       $(".results").fadeOut(function () {
