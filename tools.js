@@ -20,16 +20,16 @@ var Tools = {
 
   // Picks a random number from 1 to 6 and displays it on a die image
   die: function () {
-    View.display("die", _.template($("#die-template").html(), {
+    View.display("die", {
       result: _.random(1, 7)
-    }));
+    });
   },
 
   // Flips a coin and displays a penny on heads or tails
   coin: function () {
-    View.display("coin", _.template($("#coin-template").html(), {
+    View.display("coin", {
       result: _.sample(["heads", "tails"])
-    }));
+    });
   },
 
   // Picks a random card from a deck of 52 cards (with two added Jokers) and
@@ -65,10 +65,10 @@ var Tools = {
       alt = "red joker";
     }
 
-    View.display("card", _.template($("#card-template").html(), {
+    View.display("card", {
       file: file,
       alt: alt
-    }));
+    });
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
@@ -79,11 +79,11 @@ var Tools = {
       minimum = parseInt($("#minimum").val(), 10) || 1,
       maximum = parseInt($("#maximum").val(), 10) || 10;
 
-    View.display("number", _.template($("#number-template").html(), {
+    View.display("number", {
       result: _.random(minimum, maximum + 1),
       minimum: minimum,
       maximum: maximum
-    }));
+    });
   },
 
   // Picks a random element from a given list of text and displays it
@@ -95,16 +95,16 @@ var Tools = {
     }
     */
 
-    View.display("from_list", _.template($("#from_list-template").html(), {
+    View.display("from_list", {
       result: Utilities.getShuffledInput()[0]
-    }));
+    });
   },
 
   // Randomly sorts a given list of text and displays it in an numbered list
   sort_list: function () {
-    View.display("sort_list", _.template($("#sort_list-template").html(), {
+    View.display("sort_list", {
       result: Utilities.getShuffledInput().join("</li><li>")
-    }));
+    });
   }
 
 };
