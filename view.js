@@ -40,6 +40,11 @@ var View = {
     }
 
     // Animate tool transitions
+    View.runTransitions();
+  },
+
+  // Animates tool transitions based on the current mode
+  runTransitions: function () {
     if (View.mode === "from_list" || View.mode === "sort_list") {
       $(".options-header").slideDown();
       $(".number-options").slideUp(function () {
