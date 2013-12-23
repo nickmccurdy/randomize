@@ -24,7 +24,7 @@ var Tools = {
 
     var result = _.random(1, 7);
 
-    View.display("<img src='images/dice/die_" + result + ".png' alt='" + result + " ' height='100' class='number'></img>");
+    View.display(_.template($("#die-template").html(), {result: result}));
   },
 
   // Flips a coin and displays a penny on heads or tails
@@ -33,7 +33,7 @@ var Tools = {
 
     var result = _.sample(["heads", "tails"]);
 
-    View.display("<img src='images/coins/coin_" + result + ".png' alt='" + result + "' height='100' class='text'></img>");
+    View.display(_.template($("#coin-template").html(), {result: result}));
   },
 
   // Picks a random card from a deck of 52 cards (with two added Jokers) and
@@ -71,7 +71,7 @@ var Tools = {
       alt = "red joker";
     }
 
-    View.display("<img src='images/cards/" + file + ".png' alt='" + alt + "' height='100' class='text'></img>");
+    View.display(_.template($("#card-template").html(), {file: file, alt: alt}));
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
@@ -85,7 +85,7 @@ var Tools = {
     maximum = parseInt($("#maximum").val(), 10) || 10;
     result = _.random(minimum, maximum + 1);
 
-    View.display("<span class='number'>" + result + " </span><br><span class='mute'>from " + minimum + "  to " + maximum + "  </span>");
+    View.display(_.template($("#number-template").html(), {result: result, minimum: minimum, maximum: maximum}));
   },
 
   // Picks a random element from a given list of text and displays it
@@ -100,7 +100,7 @@ var Tools = {
     }
     */
 
-    View.display("<span class='text'>" + result + " </span>");
+    View.display(_.template($("#from_list-template").html(), {result: result}));
   },
 
   // Randomly sorts a given list of text and displays it in an numbered list
@@ -109,7 +109,7 @@ var Tools = {
 
     var result = Utilities.getShuffledInput().join("</li><li>");
 
-    View.display("<span class='list'><ul><li>" + result + " </li></ul></span>");
+    View.display(_.template($("#sort_list-template").html(), {result: result}));
   }
 
 };
