@@ -24,7 +24,7 @@ var Tools = {
 
     var result = _.random(1, 7);
 
-    View.display("<img src='images/dice/die_" + result + " .png' alt='" + result + " ' height='100' class='number'></img>");
+    View.display("<img src='images/dice/die_" + result + ".png' alt='" + result + " ' height='100' class='number'></img>");
   },
 
   // Flips a coin and displays a penny on heads or tails
@@ -41,32 +41,37 @@ var Tools = {
   card: function () {
     View.mode = "card";
 
-    var result = _.random(1, 55);
+    var result = _.random(1, 55),
+      file,
+      alt;
 
-    // Diamonds
     if (result >= 1 && result <= 13) {
-      View.display("<img src='images/cards/d" + result + " .png' alt='" + result + "  of diamonds' height='100' class='text'></img>");
+      // Diamonds
+      file = "d" + result;
+      alt = result + " of diamonds";
+    } else if (result >= 14 && result <= 26) {
+      // Hearts
+      file = "h" + (result - 13);
+      alt = (result - 13) + " of hearts";
+    } else if (result >= 27 && result <= 39) {
+      // Spades
+      file = "s" + (result - 26);
+      alt = (result - 26) + " of spades";
+    } else if (result >= 40 && result <= 52) {
+      // Clubs
+      file = "c" + (result - 39);
+      alt = (result - 39) + " of clubs";
+    } else if (result === 53) {
+      // Black joker
+      file = "jb";
+      alt = "black joker";
+    } else if (result === 54) {
+      // Red joker
+      file = "jr";
+      alt = "red joker";
     }
-    // Hearts
-    if (result >= 14 && result <= 26) {
-      View.display("<img src='images/cards/h" + (result - 13) + " .png' alt='" + (result - 13) + "  of hearts' height='100' class='text'></img>");
-    }
-    // Spades
-    if (result >= 27 && result <= 39) {
-      View.display("<img src='images/cards/s" + (result - 26) + " .png' alt='" + (result - 26) + "  of spades' height='100' class='text'></img>");
-    }
-    // Clubs
-    if (result >= 40 && result <= 52) {
-      View.display("<img src='images/cards/c" + (result - 39) + " .png' alt='" + (result - 39) + "  of clubs' height='100' class='text'></img>");
-    }
-    // Black joker
-    if (result === 53) {
-      View.display("<img src='images/cards/jb.png' alt='black joker' height='100' class='text'></img>");
-    }
-    // Red joker
-    if (result === 54) {
-      View.display("<img src='images/cards/jr.png' alt='red joker' height='100' class='text'></img>");
-    }
+
+    View.display("<img src='images/cards/" + file + ".png' alt='" + alt + "' height='100' class='text'></img>");
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
