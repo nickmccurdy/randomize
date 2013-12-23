@@ -24,12 +24,5 @@
 }
 
 .options input {
-  width: 40px;
-}
-
-.number-options .right {
-  text-align: right;
-}
-.number-options .left {
-  text-align: left;
+  width: 100px;
 }
