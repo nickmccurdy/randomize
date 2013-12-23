@@ -22,18 +22,18 @@ var Tools = {
   die: function () {
     View.mode = "die";
 
-    var result = _.random(1, 7);
-
-    View.display(_.template($("#die-template").html(), {result: result}));
+    View.display(_.template($("#die-template").html(), {
+      result: _.random(1, 7)
+    }));
   },
 
   // Flips a coin and displays a penny on heads or tails
   coin: function () {
     View.mode = "coin";
 
-    var result = _.sample(["heads", "tails"]);
-
-    View.display(_.template($("#coin-template").html(), {result: result}));
+    View.display(_.template($("#coin-template").html(), {
+      result: _.sample(["heads", "tails"])
+    }));
   },
 
   // Picks a random card from a deck of 52 cards (with two added Jokers) and
@@ -71,7 +71,10 @@ var Tools = {
       alt = "red joker";
     }
 
-    View.display(_.template($("#card-template").html(), {file: file, alt: alt}));
+    View.display(_.template($("#card-template").html(), {
+      file: file,
+      alt: alt
+    }));
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
@@ -80,19 +83,21 @@ var Tools = {
   number: function () { //BUGGY
     View.mode = "number";
 
-    var minimum, maximum, result;
-    minimum = parseInt($("#minimum").val(), 10) || 1;
-    maximum = parseInt($("#maximum").val(), 10) || 10;
-    result = _.random(minimum, maximum + 1);
+    var
+      minimum = parseInt($("#minimum").val(), 10) || 1,
+      maximum = parseInt($("#maximum").val(), 10) || 10;
 
-    View.display(_.template($("#number-template").html(), {result: result, minimum: minimum, maximum: maximum}));
+    View.display(_.template($("#number-template").html(), {
+      result: _.random(minimum, maximum + 1),
+      minimum: minimum,
+      maximum: maximum
+    }));
   },
 
   // Picks a random element from a given list of text and displays it
   from_list: function () {
     View.mode = "from_list";
 
-    var result = Utilities.getShuffledInput()[0];
     /*
     var quantity = 2;
     for(var i=0;i<quantity;i++) {
@@ -100,16 +105,18 @@ var Tools = {
     }
     */
 
-    View.display(_.template($("#from_list-template").html(), {result: result}));
+    View.display(_.template($("#from_list-template").html(), {
+      result: Utilities.getShuffledInput()[0]
+    }));
   },
 
   // Randomly sorts a given list of text and displays it in an numbered list
   sort_list: function () {
     View.mode = "sort_list";
 
-    var result = Utilities.getShuffledInput().join("</li><li>");
-
-    View.display(_.template($("#sort_list-template").html(), {result: result}));
+    View.display(_.template($("#sort_list-template").html(), {
+      result: Utilities.getShuffledInput().join("</li><li>")
+    }));
   }
 
 };
