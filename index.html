@@ -15,6 +15,7 @@
 
   <div class="container">
 
+    <!-- Navbar (includes buttons for switching tools) -->
     <nav class="navbar navbar-inverse" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -52,24 +53,30 @@
       </div>
     </nav>
 
+    <!-- Invalid options alert (TODO: use this) -->
     <div class="alert alert-danger" id="invalid-options-alert">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>Error:</strong> Invalid options.
     </div>
 
+    <!-- Main UI -->
     <div class="row well">
 
+      <!-- Tool results -->
       <div class="col-sm-6">
         <h2 id="results-header">Results</h2>
         <div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
+
         <div class="results"></div>
         <button class="btn btn-primary reload-button" type="button" onclick="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
       </div>
 
+      <!-- Tool options -->
       <div class="col-sm-6">
         <h2 class="options-header">Options</h2>
         <div class="options">
 
+          <!-- Form for number options -->
           <form class="form-horizontal number-options" role="form">
             <div class="form-group">
               <label for="minimum" class="col-sm-2 control-label">From</label>
@@ -86,6 +93,7 @@
             </div>
           </form>
 
+          <!-- Form for list options -->
           <form class="list-options" role="form">
             <textarea class="form-control" placeholder="Enter list items here, with one item per line."></textarea>
           </form>
