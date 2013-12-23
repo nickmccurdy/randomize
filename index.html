@@ -13,7 +13,7 @@
 
 <body>
 
-  <div class="container main">
+  <div class="container">
 
     <nav class="navbar navbar-inverse" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,16 +57,16 @@
       <strong>Error:</strong> Invalid options.
     </div>
 
-    <div class="well clearfix">
+    <div class="row well">
 
-      <div class="split pull-left">
+      <div class="col-sm-6">
         <h2 id="results-header">Results</h2>
         <div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
         <div class="results"></div>
         <button class="btn btn-xs btn-primary reload-button" type="button" onclick="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
       </div>
 
-      <div class="split pull-right">
+      <div class="col-sm-6">
         <h2 class="options-header">Options</h2>
         <div class="options">
           <table class="number-options">
