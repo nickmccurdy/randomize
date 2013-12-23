@@ -1,13 +1,19 @@
-// system scripts
 "use strict";
 
+// The default speed for jQuery animations
 $.fx.speeds._default = 200;
 
+// Functions for updating and setting up the views for all tools
 var View = {
 
+  // The mode, representing the current tool. Each tool has a string name that
+  // the mode can be set to.
   mode: undefined,
 
+  // Displays given HTML code (results) on the page. Animates any transitions
+  // between results and tools as needed.
   display: function (results) {
+    // Set the result HTML on the page
     if ($(".results").is(":visible")) {
       $(".results").fadeOut(function () {
         $(".results").html(results);
@@ -25,6 +31,8 @@ var View = {
         $(".results, .reload-button, .options").slideDown();
       });
     }
+
+    // Animate tool transitions
     if (View.mode === "from_list" || View.mode === "sort_list") {
       $(".options-header").slideDown();
       $(".number-options").slideUp(function () {
@@ -40,22 +48,25 @@ var View = {
     }
   },
 
+  // Repeats running the current tool with its current settings
   reload: function () {
     Tools[View.mode]();
   },
 
+  // Preloads all images on the page by adding them to an invisible container
+  // tag
   preload: function () {
     var images, coinImages, dieImages, cardImages, preload_html;
 
-    // coins
+    // Coin images
     coinImages = ["images/coins/coin_heads.png", "images/coins/coin_tails.png"];
 
-    // dice
+    // Die images
     dieImages = [1, 2, 3, 4, 5, 6].map(function (value) {
       return "images/dice/die_" + value + ".png";
     });
 
-    // cards
+    // Card images
     cardImages = [];
     ["c", "d", "h", "s"].forEach(function (suit) {
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].forEach(function (value) {
@@ -64,15 +75,20 @@ var View = {
     }, []);
     cardImages.push("images/cards/jb.png", "images/cards/jr.png");
 
+    // Bring all of the image types together
     images = [].concat(coinImages, dieImages, cardImages);
 
-    // load stuff!
+    // Load all the images onto the page
     preload_html = images.reduce(function (html, file) {
       return html + "<img src='" + file + "'>";
     }, "");
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
   },
 
+  // Binds a collection of elements to their associated tool/utility functions.
+  // Takes in a hash, where the keys are CSS selectors to elements and the
+  // values are functions to bind to the click events of the appropriate
+  // elements.
   setBinds: function (binds) {
     $.each(binds, function (el, fun) {
       $(el).click(fun);
@@ -81,8 +97,8 @@ var View = {
 
 };
 
+// Sets up the page when the document is ready
 $(function () {
-  // buttons
   View.setBinds({
     "#dice-button":      Tools.die,
     "#coins-button":     Tools.coin,
@@ -93,6 +109,5 @@ $(function () {
     ".reload-button":    View.reload
   });
 
-  // preload
   View.preload();
 });
