@@ -117,7 +117,8 @@
   </script>
 
   <script type="text/template" id="number-template">
-    <span class="number"><%= result %></span><br><span class="mute">from <%= minimum %> to <%= maximum %></span>
+    <span class="number"><%= result %></span><br>
+    <span class="mute">from <%= minimum %> to <%= maximum %></span>
   </script>
 
   <script type="text/template" id="from_list-template">
@@ -125,7 +126,11 @@
   </script>
 
   <script type="text/template" id="sort_list-template">
-    <span class="list"><ul><li><%= result %></li></ul></span>
+    <span class="list"><ul>
+      <% _.each(result, function (item) { %>
+        <li><%= item %></li>
+      <% }); %>
+    </ul></span>
   </script>
 
 <!-- scripts -->

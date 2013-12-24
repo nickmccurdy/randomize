@@ -100,7 +100,7 @@ var Tools = {
   sort_list: function () {
     return {
       mode: "sort_list",
-      result: Utilities.getShuffledInput().join("</li><li>")
+      result: Utilities.getShuffledInput()
     };
   }
 
