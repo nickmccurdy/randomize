@@ -57,7 +57,8 @@ var View = {
 
   // Repeats running the current tool with its current settings
   reload: function () {
-    Tools[View.mode]();
+    var result = Tools[View.mode]();
+    View.display(result);
   },
 
   // Preloads all images on the page by adding them to an invisible container

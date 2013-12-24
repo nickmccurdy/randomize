@@ -36,41 +36,29 @@ var Tools = {
 
   // Picks a random card from a deck of 52 cards (with two added Jokers)
   card: function () {
-    var result = _.random(1, 55),
-      file,
-      alt;
+    // Build the deck of cards (with Jokers)
+    var
+      suits = ["diamonds", "hearts", "spades", "clubs"],
+      cards = suits.reduce(function (memo, suit) {
+        return memo.concat(_.range(1, 14).map(function (value) {
+          return {
+            file: suit[0] + value,
+            alt: value + " of " + suit
+          };
+        }));
+      }, []),
+      card;
+    cards.push({ file: "jb", alt: "black joker" });
+    cards.push({ file: "jr", alt: "red joker" });
 
-    if (result >= 1 && result <= 13) {
-      // Diamonds
-      file = "d" + result;
-      alt = result + " of diamonds";
-    } else if (result >= 14 && result <= 26) {
-      // Hearts
-      file = "h" + (result - 13);
-      alt = (result - 13) + " of hearts";
-    } else if (result >= 27 && result <= 39) {
-      // Spades
-      file = "s" + (result - 26);
-      alt = (result - 26) + " of spades";
-    } else if (result >= 40 && result <= 52) {
-      // Clubs
-      file = "c" + (result - 39);
-      alt = (result - 39) + " of clubs";
-    } else if (result === 53) {
-      // Black joker
-      file = "jb";
-      alt = "black joker";
-    } else if (result === 54) {
-      // Red joker
-      file = "jr";
-      alt = "red joker";
-    }
+    // Pick a card at random
+    card = _.sample(cards);
 
     return {
       mode: "card",
-      file: file,
-      alt: alt
-    };
+      file: card.file,
+      alt: card.alt
+    }
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
