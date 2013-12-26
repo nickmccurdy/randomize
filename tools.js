@@ -7,7 +7,7 @@ var Utilities = {
   // separates it on each newline, shuffles it, and returns an array of strings.
   // If the input is empty, it returns an array with the string "list is empty".
   getShuffledInput: function () {
-    var inputText = ($(".list-options textarea").val() || "list is empty");
+    var inputText = $(".list-options textarea").val() || "list is empty";
     return _.shuffle(inputText.split("\n"));
   },
 
@@ -20,7 +20,7 @@ var Utilities = {
   // its image, without any extensions) and an alt property (representing the
   // English description of the card, used for its alt text).
   getCards: _.once(function () {
-    // Add all suit-based cards to the deck
+    // Set up suits, normal cards, and joker cards
     var
       suits = ["diamonds", "hearts", "spades", "clubs"],
       cards = suits.reduce(function (memo, suit) {
@@ -30,11 +30,14 @@ var Utilities = {
             alt: value + " of " + suit
           };
         }));
-      }, []);
+      }, []),
+      jokers = [
+        { file: "jb", alt: "black joker" },
+        { file: "jr", alt: "red joker" }
+      ]
 
     // Add jokers to the deck
-    cards.push({ file: "jb", alt: "black joker" });
-    cards.push({ file: "jr", alt: "red joker" });
+    cards.concat(jokers);
 
     // Return the result, which is automatically memoized due to the _.once()
     // call.

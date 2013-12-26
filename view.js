@@ -75,12 +75,11 @@ var View = {
     });
 
     // Card images
-    cardImages = [];
-    ["c", "d", "h", "s"].forEach(function (suit) {
-      _.range(1, 14).forEach(function (value) {
-        cardImages.push("images/cards/" + suit + value + ".png");
-      });
-    });
+    cardImages = ["c", "d", "h", "s"].reduce(function (memo, suit) {
+      return memo.concat(_.range(1, 14).map(function (value) {
+        return "images/cards/" + suit + value + ".png";
+      }));
+    }, []);
     cardImages.push("images/cards/jb.png", "images/cards/jr.png");
 
     // Bring all of the image types together
