@@ -21,20 +21,19 @@ var Helpers = {
   // English description of the card, used for its alt text).
   getCards: _.once(function () {
     // Set up suits, normal cards, and joker cards
-    var
-      suits = ["diamonds", "hearts", "spades", "clubs"],
-      cards = suits.reduce(function (memo, suit) {
-        return memo.concat(_.range(1, 14).map(function (value) {
-          return {
-            file: suit[0] + value,
-            alt: value + " of " + suit
-          };
-        }));
-      }, []),
-      jokers = [
-        { file: "jb", alt: "black joker" },
-        { file: "jr", alt: "red joker" }
-      ];
+    var suits = ["diamonds", "hearts", "spades", "clubs"];
+    var cards = suits.reduce(function (memo, suit) {
+      return memo.concat(_.range(1, 14).map(function (value) {
+        return {
+          file: suit[0] + value,
+          alt: value + " of " + suit
+        };
+      }));
+    }, []);
+    var jokers = [
+      { file: "jb", alt: "black joker" },
+      { file: "jr", alt: "red joker" }
+    ];
 
     // Add jokers to the deck
     cards.concat(jokers);
