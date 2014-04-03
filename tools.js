@@ -24,7 +24,7 @@ var Tools = {
   // Picks a random card from a deck of 52 cards (with two added Jokers)
   card: function () {
     // Pick a card at random
-    var card = _.sample(Utilities.getCards());
+    var card = _.sample(Helpers.getCards());
 
     return {
       mode: "card",
@@ -52,7 +52,7 @@ var Tools = {
   from_list: function () {
     return {
       mode: "from_list",
-      result: Utilities.getShuffledInput()[0]
+      result: Helpers.getShuffledInput()[0]
     };
   },
 
@@ -60,7 +60,7 @@ var Tools = {
   sort_list: function () {
     return {
       mode: "sort_list",
-      result: Utilities.getShuffledInput()
+      result: Helpers.getShuffledInput()
     };
   }
 

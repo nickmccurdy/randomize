@@ -1,7 +1,7 @@
 "use strict";
 
 // Helper functions for generating random data
-var Utilities = {
+var Helpers = {
 
   // Collects the list text input (used for list sampling and sorting),
   // separates it on each newline, shuffles it, and returns an array of strings.
