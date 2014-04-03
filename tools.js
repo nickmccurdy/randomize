@@ -9,7 +9,7 @@ var Tools = {
   die: function () {
     return {
       mode: "die",
-      result: _.random(1, 7)
+      result: _.random(1, 6)
     };
   },
 
@@ -41,7 +41,7 @@ var Tools = {
 
     return {
       mode: "number",
-      result: _.random(minimum, maximum + 1),
+      result: _.random(minimum, maximum),
       minimum: minimum,
       maximum: maximum
     };
