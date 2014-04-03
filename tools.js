@@ -51,7 +51,7 @@ var Tools = {
   from_list: function () {
     return {
       mode: "from_list",
-      result: Helpers.getShuffledInput()[0]
+      result: _.sample(Helpers.getInputList())
     };
   },
 
@@ -59,7 +59,7 @@ var Tools = {
   sort_list: function () {
     return {
       mode: "sort_list",
-      result: Helpers.getShuffledInput()
+      result: _.shuffle(Helpers.getInputList())
     };
   }
 

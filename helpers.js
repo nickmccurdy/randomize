@@ -4,11 +4,11 @@
 var Helpers = {
 
   // Collects the list text input (used for list sampling and sorting),
-  // separates it on each newline, shuffles it, and returns an array of strings.
-  // If the input is empty, it returns an array with the string "list is empty".
-  getShuffledInput: function () {
+  // separates it on each newline, and returns an array of strings. If the
+  // input is empty, it returns an array with the string "list is empty".
+  getInputList: function () {
     var inputText = $(".list-options textarea").val() || "list is empty";
-    return _.shuffle(inputText.split("\n"));
+    return inputText.split("\n");
   },
 
   // Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
