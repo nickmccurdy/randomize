@@ -30,7 +30,7 @@ var Tools = {
       mode: "card",
       file: card.file,
       alt: card.alt
-    }
+    };
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).

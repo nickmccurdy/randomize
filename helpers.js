@@ -34,7 +34,7 @@ var Helpers = {
       jokers = [
         { file: "jb", alt: "black joker" },
         { file: "jr", alt: "red joker" }
-      ]
+      ];
 
     // Add jokers to the deck
     cards.concat(jokers);
