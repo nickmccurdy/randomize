@@ -4,7 +4,7 @@
 }
 
 /* UI that should be hidden by default */
-.alert, .results, .reload-button, .options-header, .options {
+.alert, .results, #results-header, .reload-button, .options-header, .options {
   display: none;
 }
 

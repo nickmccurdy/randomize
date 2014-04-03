@@ -53,6 +53,7 @@ var View = {
     } else {
       $(".list-options, .number-options, .options-header").slideUp();
     }
+    $("#results-header").slideDown();
   },
 
   // Repeats running the current tool with its current settings
