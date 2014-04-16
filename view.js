@@ -94,17 +94,14 @@ var View = {
 
 };
 
-// Sets up the page when the document is ready
-$(function () {
-  View.setBinds({
-    "#dice-button":      function () { View.display(Tools.die()); },
-    "#coins-button":     function () { View.display(Tools.coin()); },
-    "#card-button":      function () { View.display(Tools.card()); },
-    "#numbers-button":   function () { View.display(Tools.number()); },
-    "#from-list-button": function () { View.display(Tools.from_list()); },
-    "#sort-list-button": function () { View.display(Tools.sort_list()); },
-    ".reload-button":    View.reload
-  });
-
-  View.preload();
+// Set up the page
+View.setBinds({
+  "#dice-button":      function () { View.display(Tools.die()); },
+  "#coins-button":     function () { View.display(Tools.coin()); },
+  "#card-button":      function () { View.display(Tools.card()); },
+  "#numbers-button":   function () { View.display(Tools.number()); },
+  "#from-list-button": function () { View.display(Tools.from_list()); },
+  "#sort-list-button": function () { View.display(Tools.sort_list()); },
+  ".reload-button":    View.reload
 });
+View.preload();
