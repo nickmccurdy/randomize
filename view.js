@@ -1,8 +1,5 @@
 "use strict";
 
-// The default speed for jQuery animations
-$.fx.speeds._default = 200;
-
 // Functions for updating and setting up the views for all tools
 var View = {
 
@@ -23,15 +20,11 @@ var View = {
 
     // Set the result HTML on the page
     if ($(".results").is(":visible")) {
-      $(".results").fadeOut(function () {
-        $(".results").html(results);
-      });
-      $(".results").fadeIn();
+      $(".results").html(results);
     } else {
-      $("#welcome").slideUp(function () {
-        $(".results").html(results);
-        $(".results, .reload-button, .options").slideDown();
-      });
+      $("#welcome").hide();
+      $(".results").html(results);
+      $(".results, .reload-button, .options").show();
     }
 
     // Animate tool transitions
@@ -41,19 +34,17 @@ var View = {
   // Animates tool transitions based on the current mode
   runTransitions: function () {
     if (View.mode === "from_list" || View.mode === "sort_list") {
-      $(".options-header").slideDown();
-      $(".number-options").slideUp(function () {
-        $(".list-options").slideDown();
-      });
+      $(".options-header").show();
+      $(".number-options").hide();
+      $(".list-options").show();
     } else if (View.mode === "number") {
-      $(".options-header").slideDown();
-      $(".list-options").slideUp(function () {
-        $(".number-options").slideDown();
-      });
+      $(".options-header").show();
+      $(".list-options").hide();
+      $(".number-options").show();
     } else {
-      $(".list-options, .number-options, .options-header").slideUp();
+      $(".list-options, .number-options, .options-header").hide();
     }
-    $("#results-header").slideDown();
+    $("#results-header").show();
   },
 
   // Repeats running the current tool with its current settings
