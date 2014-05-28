@@ -1,10 +1,11 @@
 {
+  "globalstrict": true,
   "indent": 2,
   "jquery": true,
   "globals": {
     "_": false,
-    "Helpers": false,
-    "Tools": false,
-    "View": false
+    "Helpers": true,
+    "Tools": true,
+    "View": true
   }
 }
