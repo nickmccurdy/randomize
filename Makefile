@@ -1,9 +1,9 @@
 # Run linters on the source code
-lint: jslint csslint
+lint: jshint csslint
 
-# Run jslint on all JavaScript code
-jslint:
-	jslint *.js --terse --indent=2 --plusplus --nomen --vars --predef $$ --predef _ --predef View --predef Helpers --predef Tools
+# Run jshint on all JavaScript code
+jshint:
+	jshint *.js
 
 # Run csslint on all CSS code
 csslint:
