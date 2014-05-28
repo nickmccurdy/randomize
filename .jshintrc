@@ -5,6 +5,7 @@
   "globals": {
     "_": false,
     "Helpers": true,
+    "Preloader": true,
     "Tools": true,
     "View": true
   }
