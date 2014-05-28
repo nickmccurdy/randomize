@@ -11,11 +11,3 @@ csslint:
 
 doc:
 	docco *.js
-
-# Deploy the app by merging master into gh-pages and pushing
-deploy:
-	git checkout gh-pages
-	git merge master
-	git push
-	git checkout master
-	git push
