@@ -16,7 +16,7 @@ var Preloader = {
     return memo.concat(_.range(1, 14).map(function (value) {
       return "images/cards/" + suit + value + ".png";
     }));
-  }, []).concat["images/cards/jb.png", "images/cards/jr.png"],
+  }, []).concat(["images/cards/jb.png", "images/cards/jr.png"]),
 
   // Bring all of the image types together
   images: [].concat(Preloader.coinImages, Preloader.dieImages, Preloader.cardImages),
