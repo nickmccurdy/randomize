@@ -2,7 +2,7 @@
 
 // A collection of the 6 different tools in Randomize. Each tool collects the
 // appropriate input settings and returns a data object of its results, which
-// will later be passed into View.display().
+// will later be passed into View.render().
 var Tools = {
 
   // Picks a random number from 1 to 6

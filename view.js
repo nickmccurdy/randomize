@@ -11,7 +11,7 @@ var View = {
   // the template for the appropriate mode, represented in the data argument
   // under the "mode" key. Animates any transitions between results and tools as
   // needed.
-  display: function (data) {
+  render: function (data) {
     // Update the current mode
     View.mode = data.mode;
 
@@ -50,7 +50,7 @@ var View = {
   // Repeats running the current tool with its current settings
   reload: function () {
     var result = Tools[View.mode]();
-    View.display(result);
+    View.render(result);
   },
 
   // Binds a collection of elements to their associated tool/utility functions.
@@ -67,12 +67,12 @@ var View = {
 
 // Set up the page
 View.setBinds({
-  "#dice-button":      function () { View.display(Tools.die()); },
-  "#coins-button":     function () { View.display(Tools.coin()); },
-  "#card-button":      function () { View.display(Tools.card()); },
-  "#numbers-button":   function () { View.display(Tools.number()); },
-  "#from-list-button": function () { View.display(Tools.from_list()); },
-  "#sort-list-button": function () { View.display(Tools.sort_list()); },
+  "#dice-button":      function () { View.render(Tools.die()); },
+  "#coins-button":     function () { View.render(Tools.coin()); },
+  "#card-button":      function () { View.render(Tools.card()); },
+  "#numbers-button":   function () { View.render(Tools.number()); },
+  "#from-list-button": function () { View.render(Tools.from_list()); },
+  "#sort-list-button": function () { View.render(Tools.sort_list()); },
   ".reload-button":    View.reload
 });
 Preloader.preload();
