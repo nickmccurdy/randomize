@@ -133,6 +133,12 @@
       </ul></span>
     </script>
 
+    <script type="text/template" id="preloader-template">
+      <% _.each(images, function (image) { %>
+        <img src="<%= image %>">
+      <% }); %>
+    </script>
+
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

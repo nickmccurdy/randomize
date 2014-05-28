@@ -24,9 +24,8 @@ var Preloader = {
   // Preloads all images on the page by adding them to an invisible container
   // tag
   preload: function () {
-    var preload_html = Preloader.images.reduce(function (html, file) {
-      return html + "<img src='" + file + "'>";
-    }, "");
+    var preload_html = _.template($("#preloader-template").html(),
+                                  { images: Preloader.images});
     $("<div id='preloader'></div>").appendTo("body").hide().html(preload_html);
   }
 
