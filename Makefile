@@ -3,11 +3,11 @@ lint: jshint csslint
 
 # Run jshint on all JavaScript code
 jshint:
-	jshint *.js
+	jshint js/*.js
 
 # Run csslint on all CSS code
 csslint:
 	csslint *.css --quiet
 
 doc:
-	docco *.js
+	docco js/*.js
