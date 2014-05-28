@@ -67,12 +67,10 @@ var View = {
 
 // Set up the page
 View.setBinds({
-  "#dice-button":      function () { View.render(Tools.die()); },
-  "#coins-button":     function () { View.render(Tools.coin()); },
-  "#card-button":      function () { View.render(Tools.card()); },
-  "#numbers-button":   function () { View.render(Tools.number()); },
-  "#from-list-button": function () { View.render(Tools.from_list()); },
-  "#sort-list-button": function () { View.render(Tools.sort_list()); },
-  ".reload-button":    View.reload
+  ".navbar-nav > li > a": function (event) {
+    var tool = event.currentTarget.dataset.tool;
+    View.render(Tools[tool]());
+  },
+  ".reload-button": View.reload
 });
 Preloader.preload();
