@@ -1,7 +1,9 @@
 "use strict";
 
+var app = angular.module("Randomize", []);
+
 // Functions for updating and setting up the views for all tools
-function ToolController($scope) {
+app.controller("ToolController", function ($scope) {
 
   // The mode, representing the current tool. Each tool has a string name that
   // the mode can be set to.
@@ -60,6 +62,5 @@ function ToolController($scope) {
   });
   $(".reload-button").click($scope.reload);
   
-
-}
+});
 Preloader.preload();
