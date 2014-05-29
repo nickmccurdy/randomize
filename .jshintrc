@@ -6,7 +6,6 @@
     "_": false,
     "Helpers": true,
     "Preloader": true,
-    "Tools": true,
-    "View": true
+    "Tools": true
   }
 }
