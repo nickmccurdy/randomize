@@ -51,26 +51,14 @@ var View = {
   reload: function () {
     var result = Tools[View.mode]();
     View.render(result);
-  },
-
-  // Binds a collection of elements to their associated tool/utility functions.
-  // Takes in a hash, where the keys are CSS selectors to elements and the
-  // values are functions to bind to the click events of the appropriate
-  // elements.
-  setBinds: function (binds) {
-    _.each(binds, function (fun, el) {
-      $(el).click(fun);
-    });
   }
 
 };
 
 // Set up the page
-View.setBinds({
-  ".navbar-nav > li > a": function (event) {
-    var tool = event.currentTarget.dataset.tool;
-    View.render(Tools[tool]());
-  },
-  ".reload-button": View.reload
+$(".navbar-nav > li > a").click(function (event) {
+  var tool = event.currentTarget.dataset.tool;
+  View.render(Tools[tool]());
 });
+$(".reload-button").click(View.reload);
 Preloader.preload();
