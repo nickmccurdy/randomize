@@ -18,14 +18,11 @@ app.controller("ToolController", function ($scope) {
     $scope.mode = mode;
 
     // Render the data with the appropriate template
-    var results = _.template($("#" + mode + "-template").html(), data);
+    $scope.data = data;
 
     // Set the result HTML on the page
-    if ($(".results").is(":visible")) {
-      $(".results").html(results);
-    } else {
+    if (!$(".results").is(":visible")) {
       $("#welcome").hide();
-      $(".results").html(results);
       $(".results, .reload-button, .options").show();
     }
 
@@ -56,11 +53,9 @@ app.controller("ToolController", function ($scope) {
   };
 
   // Set up the page
-  $(".navbar-nav > li > a").click(function (event) {
-    var mode = event.currentTarget.dataset.tool;
+  $scope.switchTool = function (mode) {
     $scope.render(mode, Tools[mode]());
-  });
-  $(".reload-button").click($scope.reload);
+  };
 
 });
 

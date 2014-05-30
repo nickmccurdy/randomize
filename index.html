@@ -30,22 +30,22 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="main-navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#" data-toggle="tab" data-tool="die">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('die')">
             <i class="glyphicon glyphicon-stop"></i> Dice
           </a></li>
-          <li><a href="#" data-toggle="tab" data-tool="coin">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('coin')">
             <i class="glyphicon glyphicon-adjust"></i> Coins
           </a></li>
-          <li><a href="#" data-toggle="tab" data-tool="card">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('card')">
             <i class="glyphicon glyphicon-book"></i> Cards
           </a></li>
-          <li><a href="#" data-toggle="tab" data-tool="number">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('number')">
             <i class="glyphicon glyphicon-question-sign"></i> Numbers
           </a></li>
-          <li><a href="#" data-toggle="tab" data-tool="from_list">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('from_list')">
             <i class="glyphicon glyphicon-list"></i> From List
           </a></li>
-          <li><a href="#" data-toggle="tab" data-tool="sort_list">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('sort_list')">
             <i class="glyphicon glyphicon-sort"></i> Sort List
           </a></li>
         </ul>
@@ -67,8 +67,37 @@
           <h2 id="results-header">Results</h2>
           <div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
 
-          <div class="results"></div>
-          <button class="btn btn-primary reload-button" type="button"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
+          <div class="results" ng-show="data" ng-switch="mode">
+
+            <div ng-switch-when="die">
+              <img ng-src="images/dice/die_{{data.result}}.png" alt="{{data.result}}" height="100" class="number"></img>
+            </div>
+
+            <div ng-switch-when="coin">
+              <img ng-src="images/coins/coin_{{data.result}}.png" alt="{{data.result}}" height="100" class="text"></img>
+            </div>
+
+            <div ng-switch-when="card">
+              <img ng-src="images/cards/{{data.file}}.png" alt="{{data.alt}}" height="100" class="text"></img>
+            </div>
+
+            <div ng-switch-when="number">
+              <span class="number">{{data.result}}</span><br>
+              <span class="mute">from {{data.minimum}} to {{data.maximum}}</span>
+            </div>
+
+            <div ng-switch-when="from_list">
+              <span class="text">{{data.result}}</span>
+            </div>
+
+            <div ng-switch-when="sort_list">
+              <span class="list"><ul>
+                <li ng-repeat="item in data.result">{{item}}</li>
+              </ul></span>
+            </div>
+
+          </div>
+          <button class="btn btn-primary reload-button" type="button" ng-click="reload()"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
         </div>
 
         <!-- Tool options -->
@@ -103,35 +132,6 @@
 
       </div>
     </div>
-
-    <script type="text/template" id="die-template">
-      <img src="images/dice/die_<%= result %>.png" alt="<%= result %>" height="100" class="number"></img>
-    </script>
-
-    <script type="text/template" id="coin-template">
-      <img src="images/coins/coin_<%= result %>.png" alt="<%= result %>" height="100" class="text"></img>
-    </script>
-
-    <script type="text/template" id="card-template">
-      <img src="images/cards/<%= file %>.png" alt="<%= alt %>" height="100" class="text"></img>
-    </script>
-
-    <script type="text/template" id="number-template">
-      <span class="number"><%= result %></span><br>
-      <span class="mute">from <%= minimum %> to <%= maximum %></span>
-    </script>
-
-    <script type="text/template" id="from_list-template">
-      <span class="text"><%= result %></span>
-    </script>
-
-    <script type="text/template" id="sort_list-template">
-      <span class="list"><ul>
-        <% _.each(result, function (item) { %>
-          <li><%= item %></li>
-        <% }); %>
-      </ul></span>
-    </script>
 
     <div id="preloader" ng-controller="PreloaderController">
       <img ng-src="{{image}}" ng-repeat="image in images">
