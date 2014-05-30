@@ -64,10 +64,10 @@
 
         <!-- Tool results -->
         <div class="col-sm-6">
-          <h2 id="results-header">Results</h2>
+          <h2 id="results-header" ng-show="data">Results</h2>
           <div id="welcome">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
 
-          <div class="results" ng-show="data" ng-switch="mode">
+          <div class="results" ng-switch="mode" ng-show="data">
 
             <div ng-switch-when="die">
               <img ng-src="images/dice/die_{{data.result}}.png" alt="{{data.result}}" height="100" class="number"></img>
@@ -102,11 +102,11 @@
 
         <!-- Tool options -->
         <div class="col-sm-6">
-          <h2 class="options-header">Options</h2>
+          <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
           <div class="options">
 
             <!-- Form for number options -->
-            <form class="form-horizontal number-options" role="form">
+            <form class="form-horizontal number-options" role="form" ng-show="areNumberOptionsDisplayed()">
               <div class="form-group">
                 <label for="minimum" class="col-sm-2 control-label">From</label>
                 <div class="col-sm-10">
@@ -123,7 +123,7 @@
             </form>
 
             <!-- Form for list options -->
-            <form class="list-options" role="form">
+            <form class="list-options" role="form" ng-show="areListOptionsDisplayed()">
               <textarea class="form-control" placeholder="Enter list items here, with one item per line."></textarea>
             </form>
 

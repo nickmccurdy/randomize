@@ -25,25 +25,6 @@ app.controller("ToolController", function ($scope) {
       $("#welcome").hide();
       $(".results, .reload-button, .options").show();
     }
-
-    // Animate tool transitions
-    $scope.runTransitions();
-  };
-
-  // Animates tool transitions based on the current mode
-  $scope.runTransitions = function () {
-    if ($scope.mode === "from_list" || $scope.mode === "sort_list") {
-      $(".options-header").show();
-      $(".number-options").hide();
-      $(".list-options").show();
-    } else if ($scope.mode === "number") {
-      $(".options-header").show();
-      $(".list-options").hide();
-      $(".number-options").show();
-    } else {
-      $(".list-options, .number-options, .options-header").hide();
-    }
-    $("#results-header").show();
   };
 
   // Repeats running the current tool with its current settings
@@ -55,6 +36,15 @@ app.controller("ToolController", function ($scope) {
   // Set up the page
   $scope.switchTool = function (mode) {
     $scope.render(mode, Tools[mode]());
+  };
+  $scope.areOptionsDisplayed = function () {
+    return $scope.data && _.contains(['from_list', 'sort_list', 'number'], $scope.mode);
+  };
+  $scope.areNumberOptionsDisplayed = function () {
+    return $scope.data && $scope.mode === 'number';
+  };
+  $scope.areListOptionsDisplayed = function () {
+    return $scope.data && _.contains(['from_list', 'sort_list'], $scope.mode);
   };
 
 });

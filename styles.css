@@ -3,11 +3,6 @@
   margin-bottom: 0;
 }
 
-/* UI that should be hidden by default */
-.results, #results-header, .reload-button, .options-header, .options {
-  display: none;
-}
-
 /* Tool results */
 .results .number {
   font-size: 36px;
