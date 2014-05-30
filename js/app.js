@@ -9,27 +9,15 @@ app.controller("ToolController", function ($scope) {
   // the mode can be set to.
   $scope.mode = undefined;
 
-  // Displays the given tool results data on the page. Renders the data using
-  // the template for the appropriate mode, represented in the data argument
-  // under the "mode" key. Animates any transitions between results and tools as
-  // needed.
-  $scope.render = function (mode, data) {
-    // Update the current mode
-    $scope.mode = mode;
-
-    // Render the data with the appropriate template
-    $scope.data = data;
-  };
-
   // Repeats running the current tool with its current settings
   $scope.reload = function () {
-    var result = Tools[$scope.mode]();
-    $scope.render($scope.mode, result);
+    $scope.data = Tools[$scope.mode]();
   };
 
   // Set up the page
   $scope.switchTool = function (mode) {
-    $scope.render(mode, Tools[mode]());
+    $scope.mode = mode;
+    $scope.data = Tools[mode]();
   };
   $scope.areOptionsDisplayed = function () {
     return $scope.data && _.contains(['from_list', 'sort_list', 'number'], $scope.mode);
