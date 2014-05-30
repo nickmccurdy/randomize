@@ -12,10 +12,6 @@ app.controller('ToolController', function ($scope) {
 
   // Set up the page
   $scope.$watch('mode', $scope.reload);
-  $scope.reset = function () {
-    $scope.mode = undefined;
-    $scope.result = undefined;
-  };
   $scope.areOptionsDisplayed = function () {
     return _.contains(['fromList', 'sortList', 'number'], $scope.mode);
   };
