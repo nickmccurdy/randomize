@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
 // Helper functions for generating random data
 var Helpers = {
 
   // Collects the list text input (used for list sampling and sorting),
   // separates it on each newline, and returns an array of strings. If the
-  // input is empty, it returns an array with the string "list is empty".
+  // input is empty, it returns an array with the string 'list is empty'.
   getInputList: function () {
-    var inputText = angular.element(".list-options textarea").val() || "list is empty";
-    return inputText.split("\n");
+    var inputText = angular.element('.list-options textarea').val() || 'list is empty';
+    return inputText.split('\n');
   },
 
   // Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
@@ -21,18 +21,18 @@ var Helpers = {
   // English description of the card, used for its alt text).
   getCards: _.once(function () {
     // Set up suits, normal cards, and joker cards
-    var suits = ["diamonds", "hearts", "spades", "clubs"];
+    var suits = ['diamonds', 'hearts', 'spades', 'clubs'];
     var cards = suits.reduce(function (memo, suit) {
       return memo.concat(_.range(1, 14).map(function (value) {
         return {
           file: suit[0] + value,
-          alt: value + " of " + suit
+          alt: value + ' of ' + suit
         };
       }));
     }, []);
     var jokers = [
-      { file: "jb", alt: "black joker" },
-      { file: "jr", alt: "red joker" }
+      { file: 'jb', alt: 'black joker' },
+      { file: 'jr', alt: 'red joker' }
     ];
 
     // Add jokers to the deck
