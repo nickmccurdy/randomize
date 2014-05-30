@@ -1,4 +1,5 @@
 {
+  "browser": true,
   "camelcase": true,
   "globalstrict": true,
   "indent": 2,

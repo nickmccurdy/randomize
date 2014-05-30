@@ -7,7 +7,7 @@ var Helpers = {
   // separates it on each newline, and returns an array of strings. If the
   // input is empty, it returns an array with the string 'list is empty'.
   getInputList: function () {
-    var inputText = angular.element('.list-options textarea').val() || 'list is empty';
+    var inputText = document.querySelector('.list-options textarea').value || 'list is empty';
     return inputText.split('\n');
   },
 
