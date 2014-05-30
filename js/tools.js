@@ -8,7 +8,6 @@ var Tools = {
   // Picks a random number from 1 to 6
   die: function () {
     return {
-      mode: "die",
       result: _.random(1, 6)
     };
   },
@@ -16,7 +15,6 @@ var Tools = {
   // Flips a coin (picking heads or tails)
   coin: function () {
     return {
-      mode: "coin",
       result: _.sample(["heads", "tails"])
     };
   },
@@ -27,7 +25,6 @@ var Tools = {
     var card = _.sample(Helpers.getCards());
 
     return {
-      mode: "card",
       file: card.file,
       alt: card.alt
     };
@@ -40,7 +37,6 @@ var Tools = {
     var maximum = parseInt($("#maximum").val(), 10) || 10;
 
     return {
-      mode: "number",
       result: _.random(minimum, maximum),
       minimum: minimum,
       maximum: maximum
@@ -50,7 +46,6 @@ var Tools = {
   // Picks a random element from a given list of text
   from_list: function () {
     return {
-      mode: "from_list",
       result: _.sample(Helpers.getInputList())
     };
   },
@@ -58,7 +53,6 @@ var Tools = {
   // Randomly sorts a given list of text
   sort_list: function () {
     return {
-      mode: "sort_list",
       result: _.shuffle(Helpers.getInputList())
     };
   }

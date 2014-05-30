@@ -11,12 +11,12 @@ var View = {
   // the template for the appropriate mode, represented in the data argument
   // under the "mode" key. Animates any transitions between results and tools as
   // needed.
-  render: function (data) {
+  render: function (mode, data) {
     // Update the current mode
-    View.mode = data.mode;
+    View.mode = mode;
 
     // Render the data with the appropriate template
-    var results = _.template($("#" + data.mode + "-template").html(), data);
+    var results = _.template($("#" + mode + "-template").html(), data);
 
     // Set the result HTML on the page
     if ($(".results").is(":visible")) {
@@ -50,15 +50,15 @@ var View = {
   // Repeats running the current tool with its current settings
   reload: function () {
     var result = Tools[View.mode]();
-    View.render(result);
+    View.render(View.mode, result);
   }
 
 };
 
 // Set up the page
 $(".navbar-nav > li > a").click(function (event) {
-  var tool = event.currentTarget.dataset.tool;
-  View.render(Tools[tool]());
+  var mode = event.currentTarget.dataset.tool;
+  View.render(mode, Tools[mode]());
 });
 $(".reload-button").click(View.reload);
 Preloader.preload();
