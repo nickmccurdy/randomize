@@ -61,6 +61,36 @@ app.controller("ToolController", function ($scope) {
     $scope.render(mode, Tools[mode]());
   });
   $(".reload-button").click($scope.reload);
-  
+
 });
-Preloader.preload();
+
+// A helper for preloading image files
+app.controller("PreloaderController", function ($scope) {
+
+  // Coin images
+  $scope.coinImages = function () {
+    return ["images/coins/coin_heads.png", "images/coins/coin_tails.png"];
+  };
+
+  // Die images
+  $scope.dieImages = function () {
+    return _.range(1, 7).map(function (value) {
+      return "images/dice/die_" + value + ".png";
+    });
+  };
+
+  // Card images
+  $scope.cardImages = function () {
+    return ["c", "d", "h", "s"].reduce(function (memo, suit) {
+      return memo.concat(_.range(1, 14).map(function (value) {
+        return "images/cards/" + suit + value + ".png";
+      }));
+    }, []).concat(["images/cards/jb.png", "images/cards/jr.png"]);
+  };
+
+  // Bring all of the image types together
+  $scope.images = [].concat($scope.coinImages(),
+                            $scope.dieImages(),
+                            $scope.cardImages());
+
+});
