@@ -7,14 +7,11 @@ app.controller('ToolController', function ($scope) {
 
   // Repeats running the current tool with its current settings
   $scope.reload = function () {
-    $scope.result = Tools[$scope.mode]();
+    $scope.result = $scope.mode ? Tools[$scope.mode]() : undefined;
   };
 
   // Set up the page
-  $scope.switchTool = function (mode) {
-    $scope.mode = mode;
-    $scope.result = Tools[mode]();
-  };
+  $scope.$watch('mode', $scope.reload);
   $scope.reset = function () {
     $scope.mode = undefined;
     $scope.result = undefined;
