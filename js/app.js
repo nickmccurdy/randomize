@@ -20,13 +20,13 @@ app.controller('ToolController', function ($scope) {
     $scope.result = undefined;
   };
   $scope.areOptionsDisplayed = function () {
-    return _.contains(['from_list', 'sort_list', 'number'], $scope.mode);
+    return _.contains(['fromList', 'sortList', 'number'], $scope.mode);
   };
   $scope.areNumberOptionsDisplayed = function () {
     return $scope.mode === 'number';
   };
   $scope.areListOptionsDisplayed = function () {
-    return _.contains(['from_list', 'sort_list'], $scope.mode);
+    return _.contains(['fromList', 'sortList'], $scope.mode);
   };
 
 });

@@ -34,12 +34,12 @@ var Tools = {
   },
 
   // Picks a random element from a given list of text
-  from_list: function () {
+  fromList: function () {
     return _.sample(Helpers.getInputList());
   },
 
   // Randomly sorts a given list of text
-  sort_list: function () {
+  sortList: function () {
     return _.shuffle(Helpers.getInputList());
   }
 

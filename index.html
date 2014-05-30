@@ -42,10 +42,10 @@
           <li><a href="#" data-toggle="tab" ng-click="switchTool('number')">
             <i class="glyphicon glyphicon-question-sign"></i> Numbers
           </a></li>
-          <li><a href="#" data-toggle="tab" ng-click="switchTool('from_list')">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('fromList')">
             <i class="glyphicon glyphicon-list"></i> From List
           </a></li>
-          <li><a href="#" data-toggle="tab" ng-click="switchTool('sort_list')">
+          <li><a href="#" data-toggle="tab" ng-click="switchTool('sortList')">
             <i class="glyphicon glyphicon-sort"></i> Sort List
           </a></li>
         </ul>
@@ -86,11 +86,11 @@
               <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
             </div>
 
-            <div ng-switch-when="from_list">
+            <div ng-switch-when="fromList">
               <span class="text">{{result}}</span>
             </div>
 
-            <div ng-switch-when="sort_list">
+            <div ng-switch-when="sortList">
               <span class="list"><ul>
                 <li ng-repeat="item in result">{{item}}</li>
               </ul></span>
