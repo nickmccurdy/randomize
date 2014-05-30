@@ -1,7 +1,6 @@
 {
   "globalstrict": true,
   "indent": 2,
-  "jquery": true,
   "globals": {
     "_": false,
     "angular": false,

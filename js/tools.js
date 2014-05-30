@@ -23,8 +23,8 @@ var Tools = {
   // Picks a random number from a given minimum to a given maximum (inclusive).
   // By default, the minimum and maximum values are 1 and 10.
   number: function () { //BUGGY
-    var minimum = parseInt($("#minimum").val(), 10) || 1;
-    var maximum = parseInt($("#maximum").val(), 10) || 10;
+    var minimum = parseInt(angular.element("#minimum").val(), 10) || 1;
+    var maximum = parseInt(angular.element("#maximum").val(), 10) || 10;
 
     return {
       result: _.random(minimum, maximum),
