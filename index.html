@@ -64,10 +64,10 @@
 
         <!-- Tool results -->
         <div class="col-sm-6">
-          <h2 id="results-header">Results</h2>
+          <h2 id="results-header" ng-show="data">Results</h2>
           <div id="welcome" ng-hide="data">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
 
-          <div class="results" ng-switch="mode" ng-show="data">
+          <div class="results" ng-switch="mode">
 
             <div ng-switch-when="die">
               <img ng-src="images/dice/die_{{data.result}}.png" alt="{{data.result}}" height="100" class="number"></img>
