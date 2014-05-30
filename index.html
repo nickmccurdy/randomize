@@ -64,46 +64,46 @@
 
         <!-- Tool results -->
         <div class="col-sm-6">
-          <h2 id="results-header" ng-show="data">Results</h2>
-          <div id="welcome" ng-hide="data">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
+          <h2 id="results-header" ng-show="result">Results</h2>
+          <div id="welcome" ng-hide="result">Click on a tool to start.<br><span class="text-muted">You can then click here to reload.</span></div>
 
           <div class="results" ng-switch="mode">
 
             <div ng-switch-when="die">
-              <img ng-src="images/dice/die_{{data.result}}.png" alt="{{data.result}}" height="100" class="number"></img>
+              <img ng-src="images/dice/die_{{result.result}}.png" alt="{{result.result}}" height="100" class="number"></img>
             </div>
 
             <div ng-switch-when="coin">
-              <img ng-src="images/coins/coin_{{data.result}}.png" alt="{{data.result}}" height="100" class="text"></img>
+              <img ng-src="images/coins/coin_{{result.result}}.png" alt="{{result.result}}" height="100" class="text"></img>
             </div>
 
             <div ng-switch-when="card">
-              <img ng-src="images/cards/{{data.file}}.png" alt="{{data.alt}}" height="100" class="text"></img>
+              <img ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
             </div>
 
             <div ng-switch-when="number">
-              <span class="number">{{data.result}}</span><br>
-              <span class="mute">from {{data.minimum}} to {{data.maximum}}</span>
+              <span class="number">{{result.result}}</span><br>
+              <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
             </div>
 
             <div ng-switch-when="from_list">
-              <span class="text">{{data.result}}</span>
+              <span class="text">{{result.result}}</span>
             </div>
 
             <div ng-switch-when="sort_list">
               <span class="list"><ul>
-                <li ng-repeat="item in data.result">{{item}}</li>
+                <li ng-repeat="item in result.result">{{item}}</li>
               </ul></span>
             </div>
 
           </div>
-          <button class="btn btn-primary reload-button" type="button" ng-click="reload()" ng-show="data"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
+          <button class="btn btn-primary reload-button" type="button" ng-click="reload()" ng-show="result"><i class="glyphicon glyphicon-refresh"></i>Reload</button>
         </div>
 
         <!-- Tool options -->
         <div class="col-sm-6">
           <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
-          <div class="options" ng-show="data">
+          <div class="options" ng-show="result">
 
             <!-- Form for number options -->
             <form class="form-horizontal number-options" role="form" ng-show="areNumberOptionsDisplayed()">

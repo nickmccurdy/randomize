@@ -7,13 +7,13 @@ app.controller("ToolController", function ($scope) {
 
   // Repeats running the current tool with its current settings
   $scope.reload = function () {
-    $scope.data = Tools[$scope.mode]();
+    $scope.result = Tools[$scope.mode]();
   };
 
   // Set up the page
   $scope.switchTool = function (mode) {
     $scope.mode = mode;
-    $scope.data = Tools[mode]();
+    $scope.result = Tools[mode]();
   };
   $scope.areOptionsDisplayed = function () {
     return _.contains(['from_list', 'sort_list', 'number'], $scope.mode);
