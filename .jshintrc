@@ -6,7 +6,6 @@
     "_": false,
     "angular": false,
     "Helpers": true,
-    "Preloader": true,
     "Tools": true
   }
 }
