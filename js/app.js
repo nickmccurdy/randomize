@@ -15,6 +15,10 @@ app.controller("ToolController", function ($scope) {
     $scope.mode = mode;
     $scope.result = Tools[mode]();
   };
+  $scope.reset = function () {
+    $scope.mode = undefined;
+    $scope.result = undefined;
+  }
   $scope.areOptionsDisplayed = function () {
     return _.contains(['from_list', 'sort_list', 'number'], $scope.mode);
   };
