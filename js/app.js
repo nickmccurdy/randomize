@@ -5,10 +5,6 @@ var app = angular.module("Randomize", []);
 // Functions for updating and setting up the views for all tools
 app.controller("ToolController", function ($scope) {
 
-  // The mode, representing the current tool. Each tool has a string name that
-  // the mode can be set to.
-  $scope.mode = undefined;
-
   // Repeats running the current tool with its current settings
   $scope.reload = function () {
     $scope.data = Tools[$scope.mode]();
