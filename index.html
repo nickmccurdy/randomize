@@ -70,11 +70,11 @@
           <div class="results" ng-switch="mode">
 
             <div ng-switch-when="die">
-              <img ng-src="images/dice/die_{{result.result}}.png" alt="{{result.result}}" height="100" class="number"></img>
+              <img ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
             </div>
 
             <div ng-switch-when="coin">
-              <img ng-src="images/coins/coin_{{result.result}}.png" alt="{{result.result}}" height="100" class="text"></img>
+              <img ng-src="images/coins/coin_{{result}}.png" alt="{{result}}" height="100" class="text"></img>
             </div>
 
             <div ng-switch-when="card">
@@ -87,12 +87,12 @@
             </div>
 
             <div ng-switch-when="from_list">
-              <span class="text">{{result.result}}</span>
+              <span class="text">{{result}}</span>
             </div>
 
             <div ng-switch-when="sort_list">
               <span class="list"><ul>
-                <li ng-repeat="item in result.result">{{item}}</li>
+                <li ng-repeat="item in result">{{item}}</li>
               </ul></span>
             </div>
 

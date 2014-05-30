@@ -6,27 +6,18 @@ var Tools = {
 
   // Picks a random number from 1 to 6
   die: function () {
-    return {
-      result: _.random(1, 6)
-    };
+    return _.random(1, 6);
   },
 
   // Flips a coin (picking heads or tails)
   coin: function () {
-    return {
-      result: _.sample(["heads", "tails"])
-    };
+    return _.sample(["heads", "tails"]);
   },
 
   // Picks a random card from a deck of 52 cards (with two added Jokers)
   card: function () {
     // Pick a card at random
-    var card = _.sample(Helpers.getCards());
-
-    return {
-      file: card.file,
-      alt: card.alt
-    };
+    return _.sample(Helpers.getCards());
   },
 
   // Picks a random number from a given minimum to a given maximum (inclusive).
@@ -44,16 +35,12 @@ var Tools = {
 
   // Picks a random element from a given list of text
   from_list: function () {
-    return {
-      result: _.sample(Helpers.getInputList())
-    };
+    return _.sample(Helpers.getInputList());
   },
 
   // Randomly sorts a given list of text
   sort_list: function () {
-    return {
-      result: _.shuffle(Helpers.getInputList())
-    };
+    return _.shuffle(Helpers.getInputList());
   }
 
 };
