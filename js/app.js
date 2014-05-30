@@ -19,12 +19,6 @@ app.controller("ToolController", function ($scope) {
 
     // Render the data with the appropriate template
     $scope.data = data;
-
-    // Set the result HTML on the page
-    if (!$(".results").is(":visible")) {
-      $("#welcome").hide();
-      $(".results, .reload-button, .options").show();
-    }
   };
 
   // Repeats running the current tool with its current settings
