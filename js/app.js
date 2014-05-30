@@ -21,6 +21,9 @@ app.controller('ToolController', function ($scope) {
   $scope.areListOptionsDisplayed = function () {
     return _.contains(['fromList', 'sortList'], $scope.mode);
   };
+  $scope.tabClass = function (mode) {
+    return $scope.mode === mode ? 'active' : '';
+  };
 
 });
 
