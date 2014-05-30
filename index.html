@@ -54,7 +54,7 @@
 
     <div class="container" ng-cloak>
       <!-- Invalid options alert (TODO: use this) -->
-      <div class="alert alert-danger" id="invalid-options-alert">
+      <div class="alert alert-danger ng-hide" id="invalid-options-alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Error:</strong> Invalid options.
       </div>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <div id="preloader" ng-controller="PreloaderController" ng-cloak>
+    <div id="preloader" class="ng-hide" ng-controller="PreloaderController">
       <img ng-src="{{image}}" ng-repeat="image in images">
     </div>
 
