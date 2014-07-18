@@ -69,32 +69,24 @@
 
           <div class="results" ng-switch="mode">
 
-            <div ng-switch-when="die">
-              <img ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
-            </div>
+            <img ng-switch-when="die" ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
 
             <div ng-switch-when="coin">
               <img ng-src="images/coins/coin_{{result}}.png" alt="{{result}}" height="100" class="text"></img>
             </div>
 
-            <div ng-switch-when="card">
-              <img ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
-            </div>
+            <img ng-switch-when="card" ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
 
             <div ng-switch-when="number">
               <span class="number">{{result.result}}</span><br>
               <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
             </div>
 
-            <div ng-switch-when="fromList">
-              <span class="text">{{result}}</span>
-            </div>
+            <span ng-switch-when="fromList" class="text">{{result}}</span>
 
-            <div ng-switch-when="sortList">
-              <span class="list"><ul>
-                <li ng-repeat="item in result">{{item}}</li>
-              </ul></span>
-            </div>
+            <span ng-switch-when="sortList" class="list"><ul>
+              <li ng-repeat="item in result">{{item}}</li>
+            </ul></span>
 
           </div>
           <button class="btn btn-primary reload-button" type="button" ng-click="reload()" ng-show="result"><span class="glyphicon glyphicon-refresh"></span>Reload</button>
