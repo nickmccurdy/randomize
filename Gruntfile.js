@@ -4,15 +4,19 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-docco');
 
   grunt.initConfig({
+    paths: {
+      scripts: 'js/*.js',
+      styles: '*.css'
+    },
     jshint: {
-      files: 'js/*.js',
+      files: '<%= paths.scripts %>',
       options: { jshintrc: true }
     },
     csslint: {
-      files: '*.css'
+      files: '<%= paths.styles %>'
     },
     docco: {
-      files: 'js/*.js'
+      files: '<%= paths.scripts %>'
     }
   });
 
