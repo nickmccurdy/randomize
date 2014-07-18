@@ -16,5 +16,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'csslint']);
+  grunt.registerTask('lint', ['jshint', 'csslint']);
+  grunt.registerTask('default', 'lint');
 };
