@@ -6,7 +6,7 @@
     <title>Randomize 1.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- icons -->
@@ -70,32 +70,24 @@
 
           <div class="results" ng-switch="mode">
 
-            <div ng-switch-when="die">
-              <img ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
-            </div>
+            <img ng-switch-when="die" ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
 
             <div ng-switch-when="coin">
               <img ng-src="images/coins/coin_{{result}}.png" alt="{{result}}" height="100" class="text"></img>
             </div>
 
-            <div ng-switch-when="card">
-              <img ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
-            </div>
+            <img ng-switch-when="card" ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
 
             <div ng-switch-when="number">
               <span class="number">{{result.result}}</span><br>
               <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
             </div>
 
-            <div ng-switch-when="fromList">
-              <span class="text">{{result}}</span>
-            </div>
+            <span ng-switch-when="fromList" class="text">{{result}}</span>
 
-            <div ng-switch-when="sortList">
-              <span class="list"><ul>
-                <li ng-repeat="item in result">{{item}}</li>
-              </ul></span>
-            </div>
+            <span ng-switch-when="sortList" class="list"><ul>
+              <li ng-repeat="item in result">{{item}}</li>
+            </ul></span>
 
           </div>
           <button class="btn btn-primary reload-button" type="button" ng-click="reload()" ng-show="result"><span class="fa fa-repeat"></span> Reload</button>
@@ -139,8 +131,10 @@
     </div>
 
     <!-- scripts -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/helpers.js"></script>
     <script src="js/tools.js"></script>
