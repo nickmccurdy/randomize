@@ -22,7 +22,7 @@ app.controller('ToolController', function ($scope) {
     return _.contains(['fromList', 'sortList'], $scope.mode);
   };
   $scope.tabClass = function (mode) {
-    return $scope.mode === mode ? 'active' : '';
+    return $scope.mode === mode ? 'pure-menu-selected' : '';
   };
 
 });
