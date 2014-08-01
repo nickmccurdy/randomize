@@ -14,45 +14,31 @@
 
   <body>
 
-    <!-- Navbar (includes buttons for switching tools) -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Randomize</a>
-      </div>
+    <div class="container main">
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li ng-class="{ active: isActive('/dice') }"><a href="#/dice">
-            <span class="glyphicon glyphicon-stop"></span> Dice
-          </a></li>
-          <li ng-class="{ active: isActive('/coins') }"><a href="#/coins">
-            <span class="glyphicon glyphicon-adjust"></span> Coins
-          </a></li>
-          <li ng-class="{ active: isActive('/cards') }"><a href="#/cards">
-            <span class="glyphicon glyphicon-book"></span> Cards
-          </a></li>
-          <li ng-class="{ active: isActive('/numbers') } "><a href="#/numbers">
-            <span class="glyphicon glyphicon-question-sign"></span> Numbers
-          </a></li>
-          <li ng-class="{ active: isActive('/fromList') }"><a href="#/fromList">
-            <span class="glyphicon glyphicon-list"></span> From List
-          </a></li>
-          <li ng-class="{ active: isActive('/sortList') }"><a href="#/sortList">
-            <span class="glyphicon glyphicon-sort"></span> Sort List
-          </a></li>
-        </ul>
-      </div>
-    </nav>
+      <h1 class="title">Randomize</h1>
 
-    <div class="container">
+      <ul class="nav nav-tabs">
+        <li ng-class="{ active: isActive('/dice') }"><a href="#/dice">
+          <span class="glyphicon glyphicon-stop"></span> Dice
+        </a></li>
+        <li ng-class="{ active: isActive('/coins') }"><a href="#/coins">
+          <span class="glyphicon glyphicon-adjust"></span> Coins
+        </a></li>
+        <li ng-class="{ active: isActive('/cards') }"><a href="#/cards">
+          <span class="glyphicon glyphicon-book"></span> Cards
+        </a></li>
+        <li ng-class="{ active: isActive('/numbers') } "><a href="#/numbers">
+          <span class="glyphicon glyphicon-question-sign"></span> Numbers
+        </a></li>
+        <li ng-class="{ active: isActive('/fromList') }"><a href="#/fromList">
+          <span class="glyphicon glyphicon-list"></span> From List
+        </a></li>
+        <li ng-class="{ active: isActive('/sortList') }"><a href="#/sortList">
+          <span class="glyphicon glyphicon-sort"></span> Sort List
+        </a></li>
+      </ul>
+
       <!-- Main UI -->
       <div class="row">
 
