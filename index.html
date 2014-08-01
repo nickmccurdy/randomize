@@ -50,52 +50,47 @@
         </div>
       </div>
 
-      <div id="main">
-        <div class="header">
-          <h1>Page Title</h1>
-          <h2>A subtitle for your page goes here</h2>
-        </div>
 
-        <div class="content" ng-cloak>
-          <!-- Main UI -->
-          <div class="pure-g">
+      <div ng-cloak>
 
-            <!-- Tool results -->
-            <div class="pure-u-1-2">
-              <h2 id="results-header">Results</h2>
+        <!-- Main UI -->
+        <div class="pure-g">
 
-              <ng-view class="results"></ng-view>
-              <div><button class="pure-button reload-button" type="button" ng-click="reload()"><span class="fa fa-repeat"></span> Reload</button></div>
-            </div>
+          <!-- Tool results -->
+          <div class="pure-u-1-2">
+            <h2 id="results-header">Results</h2>
 
-            <!-- Tool options -->
-            <div class="pure-u-1-2">
-              <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
-              <div class="options">
+            <ng-view class="results"></ng-view>
+            <div><button class="pure-button reload-button" type="button" ng-click="reload()"><span class="fa fa-repeat"></span> Reload</button></div>
+          </div>
 
-                <!-- Form for number options -->
-                <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
-                  <fieldset>
-                    <div class="pure-control-group">
-                      <label for="minimum">From</label>
-                      <input id="minimum" type="number" ng-model="minimum">
-                    </div>
+          <!-- Tool options -->
+          <div class="pure-u-1-2">
+            <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
+            <div class="options">
 
-                    <div class="pure-control-group">
-                      <label for="maximum">To</label>
-                      <input id="maximum" type="number" ng-model="maximum">
-                    </div>
-                  </fieldset>
-                </form>
+              <!-- Form for number options -->
+              <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
+                <fieldset>
+                  <div class="pure-control-group">
+                    <label for="minimum">From</label>
+                    <input id="minimum" type="number" ng-model="minimum">
+                  </div>
 
-                <!-- Form for list options -->
-                <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
-                  <fieldset>
-                    <textarea ng-model="items" ng-list="&#10;" ng-trim="false" placeholder="Enter list items here, with one item per line."></textarea>
-                  </fieldset>
-                </form>
+                  <div class="pure-control-group">
+                    <label for="maximum">To</label>
+                    <input id="maximum" type="number" ng-model="maximum">
+                  </div>
+                </fieldset>
+              </form>
 
-              </div>
+              <!-- Form for list options -->
+              <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
+                <fieldset>
+                  <textarea ng-model="items" ng-list="&#10;" ng-trim="false" placeholder="Enter list items here, with one item per line."></textarea>
+                </fieldset>
+              </form>
+
             </div>
           </div>
         </div>
