@@ -8,84 +8,96 @@
     <!-- css -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://purecss.io/combo/1.16.5?/css/layouts/side-menu.css">
     <link rel="stylesheet" href="styles.css">
     <!-- icons -->
     <link rel="icon" href="images/favicon.png">
   </head>
 
   <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
 
-    <div class="pure-g">
-      <div class="pure-u-1-4">
+      <div id="menu">
         <div class="pure-menu pure-menu-open">
           <a href="#" class="pure-menu-heading">Randomize</a>
 
 
           <ul>
-          <li ng-class="{ active: isActive('/dice') }"><a href="#/dice">
+            <li ng-class="{ active: isActive('/dice') }"><a href="#/dice">
               <span class="fa fa-square"></span> Dice
             </a></li>
-          <li ng-class="{ active: isActive('/coins') }"><a href="#/coins">
+            <li ng-class="{ active: isActive('/coins') }"><a href="#/coins">
               <span class="fa fa-circle"></span> Coins
             </a></li>
-          <li ng-class="{ active: isActive('/cards') }"><a href="#/cards">
+            <li ng-class="{ active: isActive('/cards') }"><a href="#/cards">
               <span class="fa fa-book"></span> Cards
             </a></li>
-          <li ng-class="{ active: isActive('/numbers') } "><a href="#/numbers">
+            <li ng-class="{ active: isActive('/numbers') } "><a href="#/numbers">
               <span class="fa fa-question"></span> Numbers
             </a></li>
-          <li ng-class="{ active: isActive('/fromList') }"><a href="#/fromList">
+            <li ng-class="{ active: isActive('/fromList') }"><a href="#/fromList">
               <span class="fa fa-list-ul"></span> From List
             </a></li>
-          <li ng-class="{ active: isActive('/sortList') }"><a href="#/sortList">
+            <li ng-class="{ active: isActive('/sortList') }"><a href="#/sortList">
               <span class="fa fa-list-ol"></span> Sort List
             </a></li>
           </ul>
         </div>
       </div>
 
-      <div class="pure-u-3-4">
-        <!-- Main UI -->
-        <div class="pure-g">
+      <div id="main">
+        <div class="header">
+          <h1>Page Title</h1>
+          <h2>A subtitle for your page goes here</h2>
+        </div>
 
-          <!-- Tool results -->
-          <div class="pure-u-1-2">
-          <h2 id="results-header">Results</h2>
+        <div class="content" ng-cloak>
+          <!-- Main UI -->
+          <div class="pure-g">
 
-          <ng-view class="results"></ng-view>
-            <div><button class="pure-button reload-button" type="button" ng-click="reload()"><span class="fa fa-repeat"></span>Reload</button></div>
-          </div>
+            <!-- Tool results -->
+            <div class="pure-u-1-2">
+              <h2 id="results-header">Results</h2>
 
-          <!-- Tool options -->
-          <div class="pure-u-1-2">
-            <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
-          <div class="options">
+              <ng-view class="results"></ng-view>
+              <div><button class="pure-button reload-button" type="button" ng-click="reload()"><span class="fa fa-repeat"></span> Reload</button></div>
+            </div>
 
-              <!-- Form for number options -->
-              <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
-                <fieldset>
-                  <div class="pure-control-group">
-                    <label for="minimum">From</label>
-                    <input id="minimum" type="number" ng-model="minimum">
-                  </div>
+            <!-- Tool options -->
+            <div class="pure-u-1-2">
+              <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
+              <div class="options">
 
-                  <div class="pure-control-group">
-                    <label for="maximum">To</label>
-                    <input id="maximum" type="number" ng-model="maximum">
-                  </div>
-                </fieldset>
-              </form>
+                <!-- Form for number options -->
+                <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
+                  <fieldset>
+                    <div class="pure-control-group">
+                      <label for="minimum">From</label>
+                      <input id="minimum" type="number" ng-model="minimum">
+                    </div>
 
-              <!-- Form for list options -->
-              <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
-                <fieldset>
-                  <textarea ng-model="items" ng-list="&#10;" ng-trim="false" placeholder="Enter list items here, with one item per line."></textarea>
-                </fieldset>
-              </form>
+                    <div class="pure-control-group">
+                      <label for="maximum">To</label>
+                      <input id="maximum" type="number" ng-model="maximum">
+                    </div>
+                  </fieldset>
+                </form>
 
+                <!-- Form for list options -->
+                <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
+                  <fieldset>
+                    <textarea ng-model="items" ng-list="&#10;" ng-trim="false" placeholder="Enter list items here, with one item per line."></textarea>
+                  </fieldset>
+                </form>
+
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
