@@ -30,22 +30,22 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="main-navbar-collapse">
         <ul class="nav navbar-nav">
-          <li ng-class="tabClass('die')"><a href="#" ng-click="mode = 'die'">
+          <li ng-class="{ active: mode === 'die' }"><a href="#" ng-click="mode = 'die'">
             <span class="glyphicon glyphicon-stop"></span> Dice
           </a></li>
-          <li ng-class="tabClass('coin')"><a href="#" ng-click="mode = 'coin'">
+          <li ng-class="{ active: mode === 'coin' }"><a href="#" ng-click="mode = 'coin'">
             <span class="glyphicon glyphicon-adjust"></span> Coins
           </a></li>
-          <li ng-class="tabClass('card')"><a href="#" ng-click="mode = 'card'">
+          <li ng-class="{ active: mode === 'card' }"><a href="#" ng-click="mode = 'card'">
             <span class="glyphicon glyphicon-book"></span> Cards
           </a></li>
-          <li ng-class="tabClass('number')"><a href="#" ng-click="mode = 'number'">
+          <li ng-class="{ active: mode === 'number' } "><a href="#" ng-click="mode = 'number'">
             <span class="glyphicon glyphicon-question-sign"></span> Numbers
           </a></li>
-          <li ng-class="tabClass('fromList')"><a href="#" ng-click="mode = 'fromList'">
+          <li ng-class="{ active: mode === 'fromList' }"><a href="#" ng-click="mode = 'fromList'">
             <span class="glyphicon glyphicon-list"></span> From List
           </a></li>
-          <li ng-class="tabClass('sortList')"><a href="#" ng-click="mode = 'sortList'">
+          <li ng-class="{ active: mode === 'sortList' }"><a href="#" ng-click="mode = 'sortList'">
             <span class="glyphicon glyphicon-sort"></span> Sort List
           </a></li>
         </ul>
