@@ -1,8 +1,3 @@
-/* Remove the extra space between alerts and the tool UI */
-.alert {
-  margin-bottom: 0;
-}
-
 /* Tool results */
 .results .number {
   font-size: 36px;
