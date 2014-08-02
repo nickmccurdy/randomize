@@ -15,98 +15,102 @@
 
   <body>
 
-    <nav class="pure-menu pure-menu-open pure-menu-horizontal">
-      <a href="#" class="pure-menu-heading" ng-click="mode = undefined">Randomize</a>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="pure-menu pure-menu-open">
+          <a href="#" class="pure-menu-heading" ng-click="mode = undefined">Randomize</a>
 
-      <ul>
-        <li ng-class="tabClass('die')"><a href="#" ng-click="mode = 'die'">
-          <span class="fa fa-square"></span> Dice
-        </a></li>
-        <li ng-class="tabClass('coin')"><a href="#" ng-click="mode = 'coin'">
-          <span class="fa fa-circle"></span> Coins
-        </a></li>
-        <li ng-class="tabClass('card')"><a href="#" ng-click="mode = 'card'">
-          <span class="fa fa-book"></span> Cards
-        </a></li>
-        <li ng-class="tabClass('number')"><a href="#" ng-click="mode = 'number'">
-          <span class="fa fa-question"></span> Numbers
-        </a></li>
-        <li ng-class="tabClass('fromList')"><a href="#" ng-click="mode = 'fromList'">
-          <span class="fa fa-list-ul"></span> From List
-        </a></li>
-        <li ng-class="tabClass('sortList')"><a href="#" ng-click="mode = 'sortList'">
-          <span class="fa fa-list-ol"></span> Sort List
-        </a></li>
-      </ul>
-    </nav>
-
-    <div ng-cloak>
-      <!-- Invalid options alert (TODO: use this) -->
-      <div class="ng-hide" id="invalid-options-alert">
-        <strong>Error:</strong> Invalid options.
+          <ul>
+            <li ng-class="tabClass('die')"><a href="#" ng-click="mode = 'die'">
+              <span class="fa fa-square"></span> Dice
+            </a></li>
+            <li ng-class="tabClass('coin')"><a href="#" ng-click="mode = 'coin'">
+              <span class="fa fa-circle"></span> Coins
+            </a></li>
+            <li ng-class="tabClass('card')"><a href="#" ng-click="mode = 'card'">
+              <span class="fa fa-book"></span> Cards
+            </a></li>
+            <li ng-class="tabClass('number')"><a href="#" ng-click="mode = 'number'">
+              <span class="fa fa-question"></span> Numbers
+            </a></li>
+            <li ng-class="tabClass('fromList')"><a href="#" ng-click="mode = 'fromList'">
+              <span class="fa fa-list-ul"></span> From List
+            </a></li>
+            <li ng-class="tabClass('sortList')"><a href="#" ng-click="mode = 'sortList'">
+              <span class="fa fa-list-ol"></span> Sort List
+            </a></li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Main UI -->
-      <div class="pure-g">
+      <div class="pure-u-3-4" ng-cloak>
+        <!-- Invalid options alert (TODO: use this) -->
+        <div class="ng-hide" id="invalid-options-alert">
+          <strong>Error:</strong> Invalid options.
+        </div>
 
-        <!-- Tool results -->
-        <div class="pure-u-1-2">
-          <h2 id="results-header" ng-show="result">Results</h2>
-          <div id="welcome" ng-hide="result">Click on a tool to start.<br><small>You can then click here to reload.</small></div>
+        <!-- Main UI -->
+        <div class="pure-g">
 
-          <div class="results" ng-switch="mode">
+          <!-- Tool results -->
+          <div class="pure-u-1-2">
+            <h2 id="results-header" ng-show="result">Results</h2>
+            <div id="welcome" ng-hide="result">Click on a tool to start.<br><small>You can then click here to reload.</small></div>
 
-            <img ng-switch-when="die" ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
+            <div class="results" ng-switch="mode">
 
-            <img ng-switch-when="coin" ng-src="images/coins/coin_{{result}}.png" alt="{{result}}" height="100" class="text"></img>
+              <img ng-switch-when="die" ng-src="images/dice/die_{{result}}.png" alt="{{result}}" height="100" class="number"></img>
 
-            <img ng-switch-when="card" ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
+              <img ng-switch-when="coin" ng-src="images/coins/coin_{{result}}.png" alt="{{result}}" height="100" class="text"></img>
 
-            <div ng-switch-when="number">
-              <span class="number">{{result.result}}</span><br>
-              <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
+              <img ng-switch-when="card" ng-src="images/cards/{{result.file}}.png" alt="{{result.alt}}" height="100" class="text"></img>
+
+              <div ng-switch-when="number">
+                <span class="number">{{result.result}}</span><br>
+                <span class="mute">from {{result.minimum}} to {{result.maximum}}</span>
+              </div>
+
+              <span ng-switch-when="fromList" class="text">{{result}}</span>
+
+              <span ng-switch-when="sortList" class="list"><ul>
+                <li ng-repeat="item in result">{{item}}</li>
+              </ul></span>
+
             </div>
-
-            <span ng-switch-when="fromList" class="text">{{result}}</span>
-
-            <span ng-switch-when="sortList" class="list"><ul>
-              <li ng-repeat="item in result">{{item}}</li>
-            </ul></span>
-
+            <button class="pure-button reload-button" type="button" ng-click="reload()" ng-show="result"><span class="fa fa-repeat"></span> Reload</button>
           </div>
-          <button class="pure-button reload-button" type="button" ng-click="reload()" ng-show="result"><span class="fa fa-repeat"></span> Reload</button>
-        </div>
 
-        <!-- Tool options -->
-        <div class="pure-u-1-2">
-          <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
-          <div class="options" ng-show="result">
+          <!-- Tool options -->
+          <div class="pure-u-1-2">
+            <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
+            <div class="options" ng-show="result">
 
-            <!-- Form for number options -->
-            <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
-              <fieldset>
-                <div class="pure-control-group">
-                  <label for="minimum">From</label>
-                  <input id="minimum" type="number" value="1">
-                </div>
+              <!-- Form for number options -->
+              <form class="pure-form pure-form-aligned number-options" role="form" ng-show="areNumberOptionsDisplayed()">
+                <fieldset>
+                  <div class="pure-control-group">
+                    <label for="minimum">From</label>
+                    <input id="minimum" type="number" value="1">
+                  </div>
 
-                <div class="pure-control-group">
-                  <label for="maximum">To</label>
-                  <input id="maximum" type="number" value="10">
-                </div>
-              </fieldset>
-            </form>
+                  <div class="pure-control-group">
+                    <label for="maximum">To</label>
+                    <input id="maximum" type="number" value="10">
+                  </div>
+                </fieldset>
+              </form>
 
-            <!-- Form for list options -->
-            <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
-              <fieldset>
-                <textarea placeholder="Enter list items here, with one item per line."></textarea>
-              </fieldset>
-            </form>
+              <!-- Form for list options -->
+              <form class="pure-form list-options" role="form" ng-show="areListOptionsDisplayed()">
+                <fieldset>
+                  <textarea placeholder="Enter list items here, with one item per line."></textarea>
+                </fieldset>
+              </form>
 
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
 
