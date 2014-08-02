@@ -5,9 +5,11 @@ var app = angular.module('Randomize', []);
 // Functions for updating and setting up the views for all tools
 app.controller('ToolController', function ($scope) {
 
+  $scope.mode = 'die';
+
   // Repeats running the current tool with its current settings
   $scope.reload = function () {
-    $scope.result = $scope.mode ? Tools[$scope.mode]() : undefined;
+    $scope.result = Tools[$scope.mode]();
   };
 
   // Set up the page
