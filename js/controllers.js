@@ -3,29 +3,24 @@
 var app = angular.module('randomize.controllers', []);
 
 // Functions for updating and setting up the views for all tools
-app.controller('ToolController', function ($scope, $location) {
-
-  $scope.mode = 'die';
+app.controller('ToolController', function ($scope, $location, $route) {
 
   $scope.isActive = function (viewLocation) {
     return viewLocation === $location.path();
   };
 
   // Repeats running the current tool with its current settings
-  $scope.reload = function () {
-    $scope.result = Tools[$scope.mode]();
-  };
+  $scope.reload = $route.reload;
 
   // Set up the page
-  $scope.$watch('mode', $scope.reload);
   $scope.areOptionsDisplayed = function () {
-    return _.contains(['fromList', 'sortList', 'number'], $scope.mode);
+    return _.contains(['/fromList', '/sortList', '/numbers'], $location.path());
   };
   $scope.areNumberOptionsDisplayed = function () {
-    return $scope.mode === 'number';
+    return $location.path() === '/numbers';
   };
   $scope.areListOptionsDisplayed = function () {
-    return _.contains(['fromList', 'sortList'], $scope.mode);
+    return _.contains(['/fromList', '/sortList'], $location.path());
   };
 
 });
