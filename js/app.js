@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('Randomize', []);
+var app = angular.module('randomize', []);
 
 // Functions for updating and setting up the views for all tools
 app.controller('ToolController', function ($scope) {
