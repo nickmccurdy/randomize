@@ -13,46 +13,46 @@ var Helpers = {
   getInputList: function () {
     var inputText = document.querySelector('.list-options textarea').value || 'list is empty';
     return inputText.split('\n');
-  },
-
-  // Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
-  // this function is automatically memoized for efficiency, so the deck of
-  // cards is only generated once when calling this function multiple times.
-  //
-  // The result of this function is represented as an array of cards (objects)
-  // with 54 items. Each card has a file property (representing the filename of
-  // its image, without any extensions) and an alt property (representing the
-  // English description of the card, used for its alt text).
-  getCards: _.once(function () {
-    // Set up suits, normal cards, and joker cards
-    var suits = ['diamonds', 'hearts', 'spades', 'clubs'];
-    var cards = suits.reduce(function (memo, suit) {
-      return memo.concat(_.range(1, 14).map(function (value) {
-        return {
-          file: suit[0] + value,
-          alt: value + ' of ' + suit
-        };
-      }));
-    }, []);
-    var jokers = [
-      { file: 'jb', alt: 'black joker' },
-      { file: 'jr', alt: 'red joker' }
-    ];
-
-    // Add jokers to the deck
-    cards.concat(jokers);
-
-    // Return the result, which is automatically memoized due to the _.once()
-    // call.
-    return cards;
-  })
+  }
 
 };
+
+// Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
+// this function is automatically memoized for efficiency, so the deck of
+// cards is only generated once when calling this function multiple times.
+//
+// The result of this function is represented as an array of cards (objects)
+// with 54 items. Each card has a file property (representing the filename of
+// its image, without any extensions) and an alt property (representing the
+// English description of the card, used for its alt text).
+tools.value('cards', (function () {
+  // Set up suits, normal cards, and joker cards
+  var suits = ['diamonds', 'hearts', 'spades', 'clubs'];
+  var cards = suits.reduce(function (memo, suit) {
+    return memo.concat(_.range(1, 14).map(function (value) {
+      return {
+        file: suit[0] + value,
+        alt: value + ' of ' + suit
+      };
+    }));
+  }, []);
+  var jokers = [
+    { file: 'jb', alt: 'black joker' },
+    { file: 'jr', alt: 'red joker' }
+  ];
+
+  // Add jokers to the deck
+  cards.concat(jokers);
+
+  // Return the result, which is automatically memoized due to the _.once()
+  // call.
+  return cards;
+})());
 
 // Picks a random number from 1 to 6
 tools.controller('DiceController', function ($scope) {
   $scope.result = _.random(1, 6);
-})
+});
 
 // Flips a coin (picking heads or tails)
 tools.controller('CoinsController', function ($scope) {
@@ -60,9 +60,9 @@ tools.controller('CoinsController', function ($scope) {
 });
 
 // Picks a random card from a deck of 52 cards (with two added Jokers)
-tools.controller('CardsController', function ($scope) {
+tools.controller('CardsController', function ($scope, cards) {
   // Pick a card at random
-  $scope.result = _.sample(Helpers.getCards());
+  $scope.result = _.sample(cards);
 });
 
 // Picks a random number from a given minimum to a given maximum (inclusive).
