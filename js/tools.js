@@ -2,45 +2,38 @@
 
 // A collection of the 6 different tools in Randomize. Each tool collects the
 // appropriate input settings and returns a data object of its results.
-var Tools = {
+var tools = angular.module('randomize.tools', []);
 
-  // Picks a random number from 1 to 6
-  die: function () {
-    return _.random(1, 6);
-  },
+// Picks a random number from 1 to 6
+tools.controller('DiceController', function ($scope) {
+  $scope.result = _.random(1, 6);
+})
 
-  // Flips a coin (picking heads or tails)
-  coin: function () {
-    return _.sample(['heads', 'tails']);
-  },
+// Flips a coin (picking heads or tails)
+tools.controller('CoinsController', function ($scope) {
+  $scope.result = _.sample(['heads', 'tails']);
+});
 
-  // Picks a random card from a deck of 52 cards (with two added Jokers)
-  card: function () {
-    // Pick a card at random
-    return _.sample(Helpers.getCards());
-  },
+// Picks a random card from a deck of 52 cards (with two added Jokers)
+tools.controller('CardsController', function ($scope) {
+  // Pick a card at random
+  $scope.result = _.sample(Helpers.getCards());
+});
 
-  // Picks a random number from a given minimum to a given maximum (inclusive).
-  // By default, the minimum and maximum values are 1 and 10.
-  number: function () { //BUGGY
-    var minimum = parseInt(document.querySelector('#minimum').value, 10) || 1;
-    var maximum = parseInt(document.querySelector('#maximum').value, 10) || 10;
+// Picks a random number from a given minimum to a given maximum (inclusive).
+// By default, the minimum and maximum values are 1 and 10.
+tools.controller('NumbersController', function ($scope) { //BUGGY
+  $scope.minimum = parseInt(document.querySelector('#minimum').value, 10) || 1;
+  $scope.maximum = parseInt(document.querySelector('#maximum').value, 10) || 10;
+  $scope.result = _.random($scope.minimum, $scope.maximum);
+});
 
-    return {
-      result: _.random(minimum, maximum),
-      minimum: minimum,
-      maximum: maximum
-    };
-  },
+// Picks a random element from a given list of text
+tools.controller('FromListController', function ($scope) {
+  $scope.result = _.sample(Helpers.getInputList());
+});
 
-  // Picks a random element from a given list of text
-  fromList: function () {
-    return _.sample(Helpers.getInputList());
-  },
-
-  // Randomly sorts a given list of text
-  sortList: function () {
-    return _.shuffle(Helpers.getInputList());
-  }
-
-};
+// Randomly sorts a given list of text
+tools.controller('SortListController', function ($scope) {
+  $scope.result = _.shuffle(Helpers.getInputList());
+});
