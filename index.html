@@ -88,7 +88,7 @@
 
             <!-- Form for list options -->
             <form class="list-options" role="form" ng-show="areListOptionsDisplayed()">
-              <textarea class="form-control" placeholder="Enter list items here, with one item per line."></textarea>
+              <textarea class="form-control" ng-model="items" ng-list="&#10;" ng-trim="false" placeholder="Enter list items here, with one item per line."></textarea>
             </form>
 
           </div>

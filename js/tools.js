@@ -4,19 +4,6 @@
 // appropriate input settings and returns a data object of its results.
 var tools = angular.module('randomize.tools', []);
 
-// Helper functions for generating random data
-var Helpers = {
-
-  // Collects the list text input (used for list sampling and sorting),
-  // separates it on each newline, and returns an array of strings. If the
-  // input is empty, it returns an array with the string 'list is empty'.
-  getInputList: function () {
-    var inputText = document.querySelector('.list-options textarea').value || 'list is empty';
-    return inputText.split('\n');
-  }
-
-};
-
 // Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
 // this function is automatically memoized for efficiency, so the deck of
 // cards is only generated once when calling this function multiple times.
@@ -73,10 +60,10 @@ tools.controller('NumbersController', function ($scope) { //BUGGY
 
 // Picks a random element from a given list of text
 tools.controller('FromListController', function ($scope) {
-  $scope.result = _.sample(Helpers.getInputList());
+  $scope.result = _.sample($scope.items);
 });
 
 // Randomly sorts a given list of text
 tools.controller('SortListController', function ($scope) {
-  $scope.result = _.shuffle(Helpers.getInputList());
+  $scope.result = _.shuffle($scope.items);
 });
