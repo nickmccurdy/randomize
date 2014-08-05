@@ -5,6 +5,9 @@ var app = angular.module('randomize.controllers', []);
 // Functions for updating and setting up the views for all tools
 app.controller('ToolController', function ($scope, $location, $route) {
 
+  $scope.minimum = 1;
+  $scope.maximum = 10;
+
   $scope.isActive = function (viewLocation) {
     return viewLocation === $location.path();
   };

@@ -68,8 +68,6 @@ tools.controller('CardsController', function ($scope, cards) {
 // Picks a random number from a given minimum to a given maximum (inclusive).
 // By default, the minimum and maximum values are 1 and 10.
 tools.controller('NumbersController', function ($scope) { //BUGGY
-  $scope.minimum = parseInt(document.querySelector('#minimum').value, 10) || 1;
-  $scope.maximum = parseInt(document.querySelector('#maximum').value, 10) || 10;
   $scope.result = _.random($scope.minimum, $scope.maximum);
 });
 
