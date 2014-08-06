@@ -2,45 +2,68 @@
 
 // A collection of the 6 different tools in Randomize. Each tool collects the
 // appropriate input settings and returns a data object of its results.
-var Tools = {
+var tools = angular.module('randomize.tools', []);
 
-  // Picks a random number from 1 to 6
-  die: function () {
-    return _.random(1, 6);
-  },
+// Builds a deck of 52 cards (with 2 Jokers) and returns it. The result of
+// this function is automatically memoized for efficiency, so the deck of
+// cards is only generated once when calling this function multiple times.
+//
+// The result of this function is represented as an array of cards (objects)
+// with 54 items. Each card has a file property (representing the filename of
+// its image, without any extensions) and an alt property (representing the
+// English description of the card, used for its alt text).
+tools.value('cards', (function () {
+  // Set up suits, normal cards, and joker cards
+  var suits = ['diamonds', 'hearts', 'spades', 'clubs'];
+  var cards = suits.reduce(function (memo, suit) {
+    return memo.concat(_.range(1, 14).map(function (value) {
+      return {
+        file: suit[0] + value,
+        alt: value + ' of ' + suit
+      };
+    }));
+  }, []);
+  var jokers = [
+    { file: 'jb', alt: 'black joker' },
+    { file: 'jr', alt: 'red joker' }
+  ];
 
-  // Flips a coin (picking heads or tails)
-  coin: function () {
-    return _.sample(['heads', 'tails']);
-  },
+  // Add jokers to the deck
+  cards.concat(jokers);
 
-  // Picks a random card from a deck of 52 cards (with two added Jokers)
-  card: function () {
-    // Pick a card at random
-    return _.sample(Helpers.getCards());
-  },
+  // Return the result, which is automatically memoized due to the _.once()
+  // call.
+  return cards;
+})());
 
-  // Picks a random number from a given minimum to a given maximum (inclusive).
-  // By default, the minimum and maximum values are 1 and 10.
-  number: function () { //BUGGY
-    var minimum = parseInt(document.querySelector('#minimum').value, 10) || 1;
-    var maximum = parseInt(document.querySelector('#maximum').value, 10) || 10;
+// Picks a random number from 1 to 6
+tools.controller('DiceController', function ($scope) {
+  $scope.result = _.random(1, 6);
+});
 
-    return {
-      result: _.random(minimum, maximum),
-      minimum: minimum,
-      maximum: maximum
-    };
-  },
+// Flips a coin (picking heads or tails)
+tools.controller('CoinsController', function ($scope) {
+  $scope.result = _.sample(['heads', 'tails']);
+});
 
-  // Picks a random element from a given list of text
-  fromList: function () {
-    return _.sample(Helpers.getInputList());
-  },
+// Picks a random card from a deck of 52 cards (with two added Jokers)
+tools.controller('CardsController', function ($scope, cards) {
+  // Pick a card at random
+  $scope.result = _.sample(cards);
+});
 
-  // Randomly sorts a given list of text
-  sortList: function () {
-    return _.shuffle(Helpers.getInputList());
-  }
+// Picks a random number from a given minimum to a given maximum (inclusive).
+// By default, the minimum and maximum values are 1 and 10.
+tools.controller('NumbersController', function ($scope) { //BUGGY
+  $scope.result = _.random($scope.minimum, $scope.maximum);
+});
 
-};
+// Picks a random element from a given list of text
+tools.controller('FromListController', function ($scope) {
+  $scope.result = _.sample($scope.items);
+});
+
+// Randomly sorts a given list of text
+tools.controller('SortListController', function ($scope) {
+  $scope.result = _.shuffle($scope.items);
+});
