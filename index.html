@@ -8,7 +8,7 @@
     <!-- css -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://purecss.io/combo/1.16.5?/css/layouts/side-menu.css">
+    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="styles.css">
     <!-- icons -->
     <link rel="icon" href="images/favicon.png">
@@ -53,19 +53,13 @@
 
       <div ng-cloak>
 
-        <!-- Main UI -->
-        <div class="pure-g">
-
           <!-- Tool results -->
-          <div class="pure-u-1-2">
             <h2 id="results-header">Results</h2>
 
             <ng-view class="results"></ng-view>
             <div><button class="pure-button reload-button" type="button" ng-click="reload()"><span class="fa fa-repeat"></span> Reload</button></div>
-          </div>
 
           <!-- Tool options -->
-          <div class="pure-u-1-2">
             <h2 class="options-header" ng-show="areOptionsDisplayed()">Options</h2>
             <div class="options">
 
@@ -92,7 +86,6 @@
               </form>
 
             </div>
-          </div>
         </div>
       </div>
     </div>
