@@ -20,9 +20,17 @@ module.exports = function (grunt) {
 
     docco: {
       files: '<%= paths.scripts %>'
+    },
+
+    karma: {
+      unit: {
+        configFile: 'test/karma.conf.js',
+        singleRun: true
+      }
     }
   });
 
   grunt.registerTask('lint', ['jshint', 'csslint']);
+  grunt.registerTask('test', 'karma');
   grunt.registerTask('default', 'lint');
 };
