@@ -29,7 +29,7 @@ tools.value('cards', (function () {
   ];
 
   // Add jokers to the deck
-  cards.concat(jokers);
+  cards = cards.concat(jokers);
 
   // Return the result, which is automatically memoized due to the _.once()
   // call.
