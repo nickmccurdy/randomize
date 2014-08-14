@@ -5,8 +5,8 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     paths: {
-      scripts: 'js/*.js',
-      styles: '*.css'
+      scripts: 'scripts/*.js',
+      styles: 'styles/*.css'
     },
     jshint: {
       files: '<%= paths.scripts %>',
