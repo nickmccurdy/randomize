@@ -1,5 +1,6 @@
 [Randomize](http://nicolasmccurdy.github.io/randomize/)
 =======================================================
+[![Build Status](https://travis-ci.org/nicolasmccurdy/randomize.svg?branch=master)](https://travis-ci.org/nicolasmccurdy/randomize)
 
 A simple web app for generating random data.
 
