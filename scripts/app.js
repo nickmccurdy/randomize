@@ -3,6 +3,7 @@
 var app = angular.module('randomize', [
   'ngRoute',
   'randomize.controllers',
+  'randomize.directives',
   'randomize.tools'
 ]);
 

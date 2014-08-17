@@ -19,24 +19,12 @@
       <h1 class="title">Randomize</h1>
 
       <ul class="nav nav-tabs">
-        <li ng-class="{ active: isActive('/dice') }"><a href="#/dice">
-          <span class="glyphicon glyphicon-stop"></span> Dice
-        </a></li>
-        <li ng-class="{ active: isActive('/coins') }"><a href="#/coins">
-          <span class="glyphicon glyphicon-adjust"></span> Coins
-        </a></li>
-        <li ng-class="{ active: isActive('/cards') }"><a href="#/cards">
-          <span class="glyphicon glyphicon-book"></span> Cards
-        </a></li>
-        <li ng-class="{ active: isActive('/numbers') } "><a href="#/numbers">
-          <span class="glyphicon glyphicon-question-sign"></span> Numbers
-        </a></li>
-        <li ng-class="{ active: isActive('/fromList') }"><a href="#/fromList">
-          <span class="glyphicon glyphicon-list"></span> From List
-        </a></li>
-        <li ng-class="{ active: isActive('/sortList') }"><a href="#/sortList">
-          <span class="glyphicon glyphicon-sort"></span> Sort List
-        </a></li>
+        <rand-tab heading="Dice" href="/dice" icon="stop"></rand-tab>
+        <rand-tab heading="Coins" href="/coins" icon="adjust"></rand-tab>
+        <rand-tab heading="Cards" href="/cards" icon="book"></rand-tab>
+        <rand-tab heading="Numbers" href="/numbers" icon="question-sign"></rand-tab>
+        <rand-tab heading="From List" href="/fromList" icon="list"></rand-tab>
+        <rand-tab heading="Sort List" href="/sortList" icon="sort"></rand-tab>
       </ul>
 
       <!-- Main UI -->
@@ -95,6 +83,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
     <script src="scripts/tools.js"></script>
   </body>
 </html>
