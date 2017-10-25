@@ -1,4 +1,4 @@
-[Randomize](http://nicolasmccurdy.github.io/randomize/)
+[Randomize](http://nickmccurdy.com/randomize/)
 =======================================================
 
 A simple web app for generating random data.
